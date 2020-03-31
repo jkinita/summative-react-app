@@ -16,6 +16,7 @@ import FilterdCars from "./components_ella/FilterdCars";
 
 import AddCarAd from "./components_tanya/AddCarAd";
 import EditCarAd from "./components_tanya/EditCarAd";
+import MyCarDetails from "./components_tanya/MyCarDetails";
 import MyProfile from "./components_tanya/MyProfile";
 
 // Joe's components:
@@ -39,6 +40,8 @@ export default class App extends React.Component {
           <AddCarAd path="/add-car" />
           <EditCarAd path="/edit/:id" />
           <MyProfile path="/my-profile" />
+          <MyCarDetails path="/my-car-details" />
+
           <SellerDetails path="/seller-details" />
         </Router>
       </React.Fragment>
