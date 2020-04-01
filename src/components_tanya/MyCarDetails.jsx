@@ -7,62 +7,68 @@ import { navigate } from "@reach/router";
 import "bootstrap/dist/css/bootstrap.css";
 
 export default class MyCarDetails extends Component {
-  // removeData = evt => {
-  //     // var index = evt.target.getAttribute("data-uuid");
-  //     Axios.delete(`http://localhost:4000/api/cars/${this.props._id}`).then(
-  //       res => {
-  //         console.log(res.data);
+  constructor(props) {
+    super(props);
+    this.state = {
+      book: {}
+    };
+  }
+  //we getting info from jason through server
+  componentDidMount() {
+    Axios.get(`${UTILS.cars_url}/${this.props._id}`).then(
+      res => {
+        this.setState({ car: res.data });
+      },
+      error => {
+        console.log("error = ", error);
+      }
+    );
+  }
 
-  //       }
-  //     );
-  //   };
+  removeData = evt => {
+    // var index = evt.target.getAttribute("data-uuid");
+    Axios.delete(`http://localhost:4000/api/cars/${this.props._id}`).then(
+      res => {
+        console.log(res.data);
+      }
+    );
+  };
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     book: {}
-  //   };
-  // }
-  // //we getting info from jason through server
-  // componentDidMount() {
-  //   Axios.get(`${UTILS.cars_url}/${this.props._id}`).then(
-  //     res => {
-  //       this.setState({ car: res.data });
-  //     },
-  //     error => {
-  //       console.log("error = ", error);
-  //     }
-  //   );
-  // }
-
-  // gotoEditCar = e => {
-  //   navigate(`/edit/:id`);
-  //   console.log("go to edit");
-  // };
+  gotoEditCar = e => {
+    navigate(`/edit/:id`);
+    console.log("go to edit");
+  };
 
   render() {
     return (
       <div>
+        {JSON.stringify(this.props)}
         <h3> Sell your car</h3>
         <div>
           <div className="my-car-image-container"></div>
           <div className="my-car-row">{this.state.car.make}</div>
           <div className="my-car-row">{this.state.car.model}</div>
           <div className="my-car-row">{this.state.car.price}</div>
-          <div className="my-car-row">{this.state.car.year}</div>
+          <div className="my-car-row">
+            Year <br />
+            {this.state.car.year}
+          </div>
 
-          <div className="my-car-row">Odometer{this.state.car.odometer}</div>
+          <div className="my-car-row">
+            Odometer <br />
+            {this.state.car.odometer}
+          </div>
           <div className="my-car-row">{this.state.car._id}</div>
 
           <div className="my-car-row">Jane Doe</div>
 
           <div className="button-container">
             <Button onClick={this.gotoEditCar}>Edit</Button>
-            <Button
-            // onClick={this.removeCar}
-            >
-              Delete
-            </Button>
+            <Button onClick={this.removeCar}>Delete</Button>
+          </div>
+          <div>
+            {" "}
+            <Button>Upload</Button>
           </div>
         </div>
       </div>

@@ -12,6 +12,10 @@ export default class AddCarAd extends Component {
     this.state = { id: Date.now() };
   }
 
+  MyCarDetails = e => {
+    navigate(`/my-car-details/${this.data.id}`);
+  };
+
   addCar = e => {
     e.preventDefault();
     var formData = new FormData(this.formRef.current);
@@ -19,13 +23,22 @@ export default class AddCarAd extends Component {
     Axios.post(UTILS.add_car, formData)
       .then(res => {
         console.log(res);
-        navigate(`/my-car-details/${res.id}`);
+        navigate(`/my-car-details/${res.data.id}`);
       })
       .catch(err => {
         console.log(err);
       });
   };
 
+  uploadToExpress = e => {
+    e.preventDefault();
+    // grab reference to the form data
+    var formData = new FormData(this.formRef.current);
+    var settings = { headers: { "Content-Type": "multipart/form-data" } };
+    Axios.post(UTILS.add_car, formData, settings).then(res => {
+      console.log(res);
+    });
+  };
   render() {
     return (
       <div className="form-wrapper">
@@ -54,8 +67,29 @@ export default class AddCarAd extends Component {
           <input type="file" name="car_image" id="car_image" /> */}
           <input id="id" type="hidden" name="id" value={this.state.id} />
 
-          <Button type="submit">Next</Button>
+          <Button type="submit" onClick={this.gotoMyCarDetails}>
+            Next
+          </Button>
         </form>
+
+        <div style={{ width: "40%", margin: "1% auto" }}>
+          <form
+            action=""
+            encType="multipart/form-data"
+            method="POST"
+            onSubmit={this.uploadToExpress}
+            ref={this.myRef}
+          >
+            <label>Photo Name</label>
+            <input type="text" name="photo_name" />
+
+            <label>Upload Photo</label>
+            <input type="file" name="car_image" id="car_image" />
+            <button type="submit" className="add-button">
+              Update details
+            </button>
+          </form>
+        </div>
       </div>
     );
   }
