@@ -1,0 +1,95 @@
+/* --------------------GENERAL STYLE-------------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* --------------------FONT STYLE-------------------- */
+h1 {
+  font-size: 2.1rem;
+  color: #fffffc;
+  font-style: italic;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #fffffc;
+}
+
+.sellpage-body-red,
+.sellpage-body-white {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.sellpage-body-red {
+  color: #b42f47;
+}
+
+.sellpage-body-white {
+  color: #fffffc;
+}
+
+.vehicle-details {
+  color: #a6a6a6;
+}
+
+/* --------------------BUTTON STYLE-------------------- */
+input,
+button {
+  outline: none;
+  color: #fffffc;
+  border: none;
+}
+
+.red-btn {
+  width: 30.2rem;
+  border-radius: 1rem;
+  background-color: #d92546;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+}
+
+.edit-btn-bigger {
+  width: 16.4rem;
+  font-size: 1.6rem;
+  background-color: #464b59;
+  border-radius: 1rem;
+}
+
+.edit-btn-smaller {
+  width: 14.5rem;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+  background-color: #464b59;
+  padding: 0.4rem;
+}
+
+.delete-btn {
+  width: 14.5rem;
+  border-radius: 1rem;
+  background-color: #1d1f2b;
+  border: 1.5px solid #d92546;
+  font-size: 1.3rem;
+  color: #d92546;
+  padding: 0.4rem;
+}
+
+.view-details-btn {
+  width: 6.1rem;
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
+  background-color: #d92546;
+  padding: 0.6rem;
+}
+
+/* --------------------INPUT STYLE-------------------- */
+.main-redline-input {
+  border-bottom: 2px solid #b42f47;
+  width: 28.8rem;
+  background-color: #1d1f2b;
+  padding: 1rem;
+}
