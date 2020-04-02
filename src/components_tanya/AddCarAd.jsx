@@ -49,44 +49,59 @@ export default class AddCarAd extends Component {
   render() {
     return (
       <div className="main-content-t">
+        <h2 className="vehicle-details-title">Vehicle details</h2>
         {/* <h2 className="vehicle-details ">Vehicle Details</h2> */}
+        <div className="card">
+          <div className="card-body px-lg-5 pt-0">
+            <form onSubmit={this.addCar} ref={this.formRef}>
+              <div className=" main-redline-input md-form">
+                {/* <label>Year</label> */}
+                <input id="year" type="string" name="year" placeholder="Year" />
+              </div>
 
-        {/* <form onSubmit={this.addCar} ref={this.formRef}></form> */}
-        <form>
-          <label>Year</label>
-          <input id="year" type="string" name="year" placeholder="year" />
+              <div className=" main-redline-input md-form">
+                {/* <label>Make</label> */}
+                <input type="text" name="make" placeholder="Make" />
+              </div>
 
-          <label>Make</label>
-          <input type="text" name="make" placeholder="make" />
+              <div className=" main-redline-input md-form">
+                {/* <label>Model</label> */}
+                <input
+                  id="model"
+                  type="text"
+                  name="model"
+                  placeholder="Model"
+                />
+              </div>
+              <div className="main-redline-input md-form">
+                {/* <label>Odometer</label> */}
+                <input
+                  id="odometer"
+                  type="number"
+                  name="odometer"
+                  placeholder="Odometer"
+                />
+              </div>
 
-          <label>Model</label>
-          <input id="model" type="text" name="model" placeholder="model" />
+              <div className=" main-redline-input md-form">
+                {/* <label>Price</label> */}
+                <input
+                  id="price"
+                  type="number"
+                  name="price"
+                  placeholder="Price"
+                />
+              </div>
+              <input id="id" type="hidden" name="id" value={this.state.id} />
 
-          <label>Odometer</label>
-          <input
-            id="odometer"
-            type="number"
-            name="odometer"
-            placeholder="odometer"
-          />
+              <input type="file" name="car_image" id="car_image" />
+              <button onClick={this.uploadToExpress} className="add-button">
+                Upload picture
+              </button>
 
-          <label>Price</label>
-          <input id="price" type="number" name="price" placeholder="price" />
-          {/* 
-          <label>Car image</label>
-          <input type="file" name="car_image" id="car_image" /> */}
-          <input id="id" type="hidden" name="id" value={this.state.id} />
-          <Button type="submit">Next</Button>
-        </form>
-
-        <div style={{ width: "40%", margin: "1% auto" }}>
-          <form onSubmit={this.uploadToExpress} ref={this.formRef}>
-            {/* <label className="choose-file-label">Upload Photo</label> */}
-            <input type="file" name="car_image" id="car_image" />
-            <button type="submit" className="add-button">
-              Update details
-            </button>
-          </form>
+              <Button type="submit">Next</Button>
+            </form>
+          </div>
         </div>
       </div>
     );

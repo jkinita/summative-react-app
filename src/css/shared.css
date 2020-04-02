@@ -52,6 +52,7 @@ h3 {
 
 .vehicle-details-title {
   color: #a6a6a6;
+  font-style: italic;
 }
 
 /* --------------------BUTTON STYLE-------------------- */
@@ -108,8 +109,9 @@ button {
 .main-redline-input {
   border-bottom: 2px solid #b42f47;
   width: 32.8rem;
+  width: 85%;
   background-color: #1d1f2b;
-  padding: 1rem;
+  padding: 1.8rem;
 }
 
 .user-title-red {

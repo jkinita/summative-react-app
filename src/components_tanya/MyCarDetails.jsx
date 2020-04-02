@@ -47,7 +47,11 @@ export default class MyCarDetails extends Component {
     return (
       <div className="main-content-t">
         <div className=" row-t my-car-image-wrapper-t">
-          <img src={this.state.car.car_image} alt="my-car-image" />
+          <img
+            width={100}
+            src={`http://localhost:4000/assets/${this.state.car.car_image}`}
+            alt="my-car-image"
+          />
         </div>
         <div className="row-t">
           <h1 className="make-big-title-t"> {this.state.car.make} </h1>
