@@ -107,7 +107,11 @@ button {
 /* --------------------INPUT STYLE-------------------- */
 .main-redline-input {
   border-bottom: 2px solid #b42f47;
-  width: 28.8rem;
+  width: 32.8rem;
   background-color: #1d1f2b;
   padding: 1rem;
+}
+
+.user-title-red {
+  color: #B42F47
 }
