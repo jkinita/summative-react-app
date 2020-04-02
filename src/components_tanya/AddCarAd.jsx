@@ -19,8 +19,14 @@ export default class AddCarAd extends Component {
   addCar = e => {
     e.preventDefault();
     var formData = new FormData(this.formRef.current);
-    console.log("FORMDATA", formData);
-    Axios.post(UTILS.add_car, formData)
+    // FYI: form still works even if there is no image included
+    // forms with images look a bit different - we need to add this line.
+    var settings = {
+      headers: { "Content-Type": "multipart/form-data" }
+    };
+
+    console.log(">>> FORMDATA ", formData);
+    Axios.post(UTILS.add_car, formData, settings)
       .then(res => {
         console.log(res);
         navigate(`/my-car-details/${res.data.id}`);
@@ -35,6 +41,7 @@ export default class AddCarAd extends Component {
     // grab reference to the form data
     var formData = new FormData(this.formRef.current);
     var settings = { headers: { "Content-Type": "multipart/form-data" } };
+    console.log(">>>+ FORMDATA ", formData);
     Axios.post(UTILS.add_car, formData, settings).then(res => {
       console.log(res);
     });
@@ -43,7 +50,9 @@ export default class AddCarAd extends Component {
     return (
       <div className="main-content-t">
         {/* <h2 className="vehicle-details ">Vehicle Details</h2> */}
-        <form onSubmit={this.addCar} ref={this.formRef}>
+
+        {/* <form onSubmit={this.addCar} ref={this.formRef}></form> */}
+        <form>
           <label>Year</label>
           <input id="year" type="string" name="year" placeholder="year" />
 
@@ -71,13 +80,7 @@ export default class AddCarAd extends Component {
         </form>
 
         <div style={{ width: "40%", margin: "1% auto" }}>
-          <form
-            action=""
-            encType="multipart/form-data"
-            method="POST"
-            onSubmit={this.uploadToExpress}
-            ref={this.myRef}
-          >
+          <form onSubmit={this.uploadToExpress} ref={this.formRef}>
             {/* <label className="choose-file-label">Upload Photo</label> */}
             <input type="file" name="car_image" id="car_image" />
             <button type="submit" className="add-button">
