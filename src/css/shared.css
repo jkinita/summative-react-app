@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #1D1F2B;
+}
+
+
+
 /* --------------------FONT STYLE-------------------- */
 h1 {
   font-size: 2.1rem;
@@ -43,6 +49,8 @@ button {
   outline: none;
   color: #fffffc;
   border: none;
+  background-color: #1D1F2B;
+
 }
 
 .red-btn {

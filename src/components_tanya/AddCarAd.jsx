@@ -41,7 +41,8 @@ export default class AddCarAd extends Component {
   };
   render() {
     return (
-      <div className="form-wrapper">
+      <div className="main-content-t">
+        {/* <h2 className="vehicle-details ">Vehicle Details</h2> */}
         <form onSubmit={this.addCar} ref={this.formRef}>
           <label>Year</label>
           <input id="year" type="string" name="year" placeholder="year" />
@@ -66,10 +67,7 @@ export default class AddCarAd extends Component {
           <label>Car image</label>
           <input type="file" name="car_image" id="car_image" /> */}
           <input id="id" type="hidden" name="id" value={this.state.id} />
-
-          <Button type="submit" onClick={this.gotoMyCarDetails}>
-            Next
-          </Button>
+          <Button type="submit">Next</Button>
         </form>
 
         <div style={{ width: "40%", margin: "1% auto" }}>
@@ -80,10 +78,7 @@ export default class AddCarAd extends Component {
             onSubmit={this.uploadToExpress}
             ref={this.myRef}
           >
-            <label>Photo Name</label>
-            <input type="text" name="photo_name" />
-
-            <label>Upload Photo</label>
+            {/* <label className="choose-file-label">Upload Photo</label> */}
             <input type="file" name="car_image" id="car_image" />
             <button type="submit" className="add-button">
               Update details

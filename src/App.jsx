@@ -5,8 +5,6 @@ import Axios from "axios";
 import uuid from "react-uuid";
 import { navigate } from "@reach/router";
 import { Button } from "reactstrap";
-import "./css/shared.css";
-import "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&display=swap";
 
 // Ella's components:
 import Home from "./components_ella/Home";
@@ -44,7 +42,7 @@ export default class App extends React.Component {
           <AddCarAd path="/add-car" />
           <EditCarAd path="/edit/:id" />
           <MyProfile path="/my-profile" />
-          <MyCarDetails path="/my-car-details" />
+          <MyCarDetails path="/my-car-details/:id" />
 
           <SellerDetails path="/seller-details" />
         </Router>
