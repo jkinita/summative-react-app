@@ -63,7 +63,7 @@ export default class MyProfile extends Component {
               </h1>
             </div>
 
-            <div className=" buttons-container-t">
+            <div className=" small-buttons-container-t">
               <Button className="edit-btn-small-t " onClick={this.gotoEditCar}>
                 Edit
               </Button>

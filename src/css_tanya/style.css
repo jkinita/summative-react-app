@@ -22,11 +22,24 @@
 
 
 /* ____________________sell car details___________________ */
-
+.my-car-details-container-t {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .row-t {
     display: flex;
     flex-direction: row;
+}
+
+.my-car-image-wrapper-t {
+    margin-bottom: 2rem;
+}
+
+.my-car-image-wrapper-t>img {
+    max-width: 100%;
+    width: 320px;
 }
 
 .make-big-title-t {
@@ -39,19 +52,64 @@
 }
 
 
-.car-details-year-conainer-t {
+.year-odometer-conainer-t {
     padding-right: 6rem;
+    margin-bottom: 4rem;
 }
 
 
-.buttons-container-t {
+.user-small-image-wrapper-t>img {
+    max-width: 100%;
+    width: 80px;
+    border-radius: 120px;
+
+}
+
+.user-details-container-horisontal-t {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 3rem;
+    flex-direction: row;
+    margin-bottom: 4rem;
 }
+
+
 
 .row-t>.edit-btn-bigger {
     margin-right: 2rem;
+}
+
+.buttons-container-t {
+    display: flex;
+
+    margin-bottom: 3rem;
+}
+
+.red-btn-t {
+    width: 30.2rem;
+    border-radius: 1rem;
+    background-color: #d92546;
+    padding: 1.2rem;
+    font-size: 1.8rem;
+}
+
+
+.edit-btn-big-t {
+    width: 13.8rem;
+    font-size: 1.6rem;
+    background-color: #464b59;
+    border-radius: 1rem;
+    margin-right: 2rem;
+}
+
+
+
+.delete-btn-big-t {
+    width: 13.8rem;
+    border-radius: 1rem;
+    background-color: #1d1f2b;
+    border: 1.5px solid #d92546;
+    font-size: 1.3rem;
+    color: #d92546;
+    padding: 0.4rem;
 }
 
 
@@ -131,13 +189,20 @@
     margin-bottom: 3.5rem;
 }
 
-
+.small-buttons-container-t {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
 
 
 
 .selling-vehicles-container {
     margin-left: 4rem;
 }
+
+
+
 
 /* ____________________sell carr form___________________ */
 
