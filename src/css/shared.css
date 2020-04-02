@@ -7,8 +7,14 @@
   box-sizing: border-box;
 }
 
-body {
+html {
+  font-size: 62.5%;
+}
+
+body #root {
+  font-size: 1.6rem;
   font-family: "Open Sans", sans-serif;
+  background-color: #1d1f2b;
 }
 
 /* --------------------FONT STYLE-------------------- */
@@ -24,22 +30,27 @@ h2 {
   color: #fffffc;
 }
 
-.sellpage-body-red,
-.sellpage-body-white {
+h3 {
+  font-size: 1.2rem;
+  color: #464b59;
+}
+
+.my-car-sign-red,
+.my-car-sign-white {
   font-size: 1.5rem;
   font-weight: 600;
   font-style: italic;
 }
 
-.sellpage-body-red {
+.my-car-sign-red {
   color: #b42f47;
 }
 
-.sellpage-body-white {
+.my-car-sign-white {
   color: #fffffc;
 }
 
-.vehicle-details {
+.vehicle-details-title {
   color: #a6a6a6;
 }
 
@@ -59,14 +70,14 @@ button {
   font-size: 1.8rem;
 }
 
-.edit-btn-bigger {
+.edit-btn-big {
   width: 16.4rem;
   font-size: 1.6rem;
   background-color: #464b59;
   border-radius: 1rem;
 }
 
-.edit-btn-smaller {
+.edit-btn-small {
   width: 14.5rem;
   border-radius: 1rem;
   font-size: 1.3rem;

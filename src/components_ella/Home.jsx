@@ -1,15 +1,17 @@
-import * as React from "react";
+import React, { Component } from "react";
 import Axios from "axios";
-// import "../App.css";
+import * as UTILS from "../utils";
+import SingleCarAsCard from "./SingleCarAsCard";
+import "../css_ella/home.css";
 
-export default class Home extends React.Component {
+export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = { cars: [] };
   }
 
   componentDidMount() {
-    Axios.get(`http://localhost:4000/api/cars`).then(
+    Axios.get(UTILS.cars_url).then(
       res => {
         if (res.data.result === false) {
           this.setState({ result: false });
@@ -26,9 +28,20 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>Featured cars</h1>
-        {this.state.result === false ? <p>no users returned</p> : null}
-        <li>{this.props.car_image}</li>
+        {this.state.result === false ? <p>no cars returned</p> : null}
+        {this.state.cars.map((car, i) => {
+          return (
+            <SingleCarAsCard
+              key={i}
+              car_image={car.car_image}
+              make={car.make}
+              model={car.model}
+              odometer={car.odometer}
+              year={car.year}
+              price={car.price}
+            />
+          );
+        })}
       </div>
     );
   }
