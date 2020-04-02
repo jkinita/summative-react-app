@@ -1,0 +1,55 @@
+.main-content-t {
+
+    display: flex;
+
+    flex-direction: column;
+    min-height: 100vh;
+    /* justify-content: center; */
+    align-items: flex-start;
+    box-sizing: border-box;
+    margin-left: 3rem;
+    width: 100%;
+    display: flex;
+}
+
+
+
+/* ____________________sell car form___________________ */
+
+.choose-file-label {
+    color: aliceblue;
+}
+
+
+
+/* ____________________sell car details___________________ */
+
+
+.row-t {
+    display: flex;
+}
+
+.make-big-title-t {
+    padding-right: 0.7rem;
+}
+
+
+.model-big-title-t {
+    padding-right: 2rem;
+}
+
+
+.car-details-year-conainer-t {
+    padding-right: 6rem;
+}
+
+
+.buttons-container-t {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3rem;
+}
+
+.row-t>.edit-btn-bigger {
+    margin-right: 2rem;
+}

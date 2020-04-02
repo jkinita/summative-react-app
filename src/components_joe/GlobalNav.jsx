@@ -5,12 +5,12 @@ const menuStyle = {
   display: "flex",
   width: "30vw",
   margin: "0 auto",
-  justifyContent: "space-evenly",
+  // justifyContent: "space-evenly",
   alignItems: "center",
   listStyleType: "none"
 };
 
-const LinkStyle = { color: "grey" };
+const LinkStyle = { color: "grey", padding: "0.3em" };
 
 export default class GlobalNav extends Component {
   componentDidMount() {}
@@ -32,7 +32,7 @@ export default class GlobalNav extends Component {
 
           <li>
             <Link style={LinkStyle} to="/add-car">
-              Sell your car
+              Sell
             </Link>
           </li>
           <li>

@@ -43,7 +43,7 @@ export default class App extends React.Component {
           <AddCarAd path="/add-car" />
           <EditCarAd path="/edit/:id" />
           <MyProfile path="/my-profile" />
-          <MyCarDetails path="/my-car-details" />
+          <MyCarDetails path="/my-car-details/:id" />
 
           <SellerDetails path="/seller-details" />
         </Router>

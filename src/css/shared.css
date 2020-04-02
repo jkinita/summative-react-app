@@ -13,8 +13,8 @@ html {
 
 body #root {
   font-size: 1.6rem;
-  font-family: "Open Sans", sans-serif;
   background-color: #1d1f2b;
+  font-family: "Open Sans", sans-serif;
 }
 
 /* --------------------FONT STYLE-------------------- */
@@ -60,6 +60,7 @@ button {
   outline: none;
   color: #fffffc;
   border: none;
+  background-color: #1d1f2b;
 }
 
 .red-btn {
