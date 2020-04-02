@@ -5,6 +5,7 @@ import Axios from "axios";
 import uuid from "react-uuid";
 import { navigate } from "@reach/router";
 import { Button } from "reactstrap";
+import "./css/shared.css";
 
 // Ella's components:
 import Home from "./components_ella/Home";
