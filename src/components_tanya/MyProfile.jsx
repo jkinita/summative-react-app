@@ -13,16 +13,16 @@ export default class MyProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      car: {}
+      cars: [],
     };
   }
   //we getting info from jason through server
   componentDidMount() {
-    Axios.get(`${UTILS.cars_url}/${this.props.id}`).then(
-      res => {
-        this.setState({ car: res.data[0] });
+    Axios.get(`${UTILS.cars_url}`).then(
+      (res) => {
+        this.setState({ cars: res.data });
       },
-      error => {
+      (error) => {
         console.log("error = ", error);
       }
     );
@@ -51,27 +51,38 @@ export default class MyProfile extends Component {
           <div className="row-t">
             <h2 className="selling-vehicles-title">Selling Vehicles</h2>
           </div>
-          <div className="row-t">
-            <div className="  small-image-car-wrapper">
-              <img src={this.state.car.ar_image} alt="car-img" />
-            </div>
-            <div>
-              <h1 className="make-big-title-t">make {this.state.car.make} </h1>
-              <h1 className="model-big-title-t">
-                {" "}
-                model{this.state.car.model}{" "}
-              </h1>
-            </div>
+          {this.state.cars
+            .filter((car) => car.seller_name == "user")
+            .map((car) => {
+              return (
+                <div className="row-t">
+                  <div className="  small-image-car-wrapper">
+                    <img src={car.car_image} alt="car-img" />
+                  </div>
 
-            <div className=" small-buttons-container-t">
-              <Button className="edit-btn-small-t " onClick={this.gotoEditCar}>
-                Edit
-              </Button>
-              <Button className="delete-btn-small-t" onClick={this.removeCar}>
-                Delete
-              </Button>
-            </div>
-          </div>
+                  <div>
+                    <h1 className="make-big-title-t">Toyota {car.make} </h1>
+                    <h1 className="model-big-title-t"> Prius{car.model} </h1>
+                    <p className="view-details-btn-t">View details ></p>
+                  </div>
+
+                  <div className=" small-buttons-container-t">
+                    <Button
+                      className="edit-btn-small-t "
+                      onClick={this.gotoEditCar}
+                    >
+                      Edit
+                    </Button>
+                    <Button
+                      className="delete-btn-small-t"
+                      onClick={this.removeCar}
+                    >
+                      Delete
+                    </Button>
+                  </div>
+                </div>
+              );
+            })}
         </div>
       </div>
     );

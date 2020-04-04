@@ -140,6 +140,8 @@
 
 .user-image-wrapper-t {
     margin-bottom: 2rem;
+    margin-top: 3rem;
+
 }
 
 .user-image-wrapper-t>img {
@@ -191,8 +193,9 @@
 
 .small-buttons-container-t {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 3rem;
+
+    flex-direction: row;
+    /* margin-bottom: 3rem; */
 }
 
 
@@ -231,6 +234,11 @@ form {
 }
 
 
-.main-content-t.vehicle-details-title {
+.main-content-t .vehicle-details-title {
     margin-left: 5%;
+}
+
+
+.view-details-btn-t {
+    color: #d92546;
 }

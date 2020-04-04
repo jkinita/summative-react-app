@@ -12,37 +12,37 @@ export default class AddCarAd extends Component {
     this.state = { id: Date.now() };
   }
 
-  MyCarDetails = e => {
+  MyCarDetails = (e) => {
     navigate(`/my-car-details/${this.data.id}`);
   };
 
-  addCar = e => {
+  addCar = (e) => {
     e.preventDefault();
     var formData = new FormData(this.formRef.current);
     // FYI: form still works even if there is no image included
     // forms with images look a bit different - we need to add this line.
     var settings = {
-      headers: { "Content-Type": "multipart/form-data" }
+      headers: { "Content-Type": "multipart/form-data" },
     };
 
     console.log(">>> FORMDATA ", formData);
     Axios.post(UTILS.add_car, formData, settings)
-      .then(res => {
+      .then((res) => {
         console.log(res);
         navigate(`/my-car-details/${res.data.id}`);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
 
-  uploadToExpress = e => {
+  uploadToExpress = (e) => {
     e.preventDefault();
     // grab reference to the form data
     var formData = new FormData(this.formRef.current);
     var settings = { headers: { "Content-Type": "multipart/form-data" } };
     console.log(">>>+ FORMDATA ", formData);
-    Axios.post(UTILS.add_car, formData, settings).then(res => {
+    Axios.post(UTILS.add_car, formData, settings).then((res) => {
       console.log(res);
     });
   };
@@ -90,6 +90,14 @@ export default class AddCarAd extends Component {
                   type="number"
                   name="price"
                   placeholder="Price"
+                />
+              </div>
+              <div className="  md-form">
+                <input
+                  id="seller_name"
+                  type="text"
+                  name="seller_name"
+                  value="user"
                 />
               </div>
               <input id="id" type="hidden" name="id" value={this.state.id} />
