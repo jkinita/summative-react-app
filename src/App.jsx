@@ -19,7 +19,6 @@ import AddCarAd from "./components_tanya/AddCarAd";
 import EditCarAd from "./components_tanya/EditCarAd";
 import MyCarDetails from "./components_tanya/MyCarDetails";
 import MyProfile from "./components_tanya/MyProfile";
-import Header from "./components_tanya/Header";
 
 // Joe's components:
 import GlobalNav from "./components_joe/GlobalNav";

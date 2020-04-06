@@ -1,0 +1,52 @@
+.choose-file-label {
+    color: #fffffc;
+}
+
+.main-content-t .form-container-t {
+    border: none;
+    background-color: #1d1f2b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+}
+
+.form-container-t form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-upload-container-t>input {
+    font-size: 1.3rem;
+}
+
+
+
+.main-content-t>form {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content-t .vehicle-details-title {
+    margin-left: 10%;
+}
+
+form>.red-btn-t {
+    margin-top: 5.5rem;
+}
+
+
+.card-body {
+    background-color: #1d1f2b;
+}
+
+
+btn-next-t {
+    width: 30.2rem;
+    border-radius: 1rem;
+    background-color: #d92546;
+    padding: 1.2rem;
+    font-size: 1.8rem;
+}

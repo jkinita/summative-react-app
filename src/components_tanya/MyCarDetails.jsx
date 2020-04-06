@@ -13,16 +13,16 @@ export default class MyCarDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      car: {}
+      car: {},
     };
   }
   //we getting info from jason through server
   componentDidMount() {
     Axios.get(`${UTILS.cars_url}/${this.props.id}`).then(
-      res => {
+      (res) => {
         this.setState({ car: res.data[0] });
       },
-      error => {
+      (error) => {
         console.log("error = ", error);
       }
     );
@@ -30,18 +30,24 @@ export default class MyCarDetails extends Component {
 
   removeCar = () => {
     Axios.delete(`${UTILS.cars_url}/${this.props.id}`).then(
-      res => {
+      (res) => {
         console.log("DELETED");
         //navigate("/all-cars");
       },
-      error => {
+      (error) => {
         console.log("error = ", error);
       }
     );
   };
-  gotoEditCar = e => {
-    navigate(`/edit/:id`);
+
+  gotoEditCar = (evt) => {
+    var carid = evt.target.getAttribute("data-id");
+    navigate(`/edit/${carid}`);
     console.log("go to edit");
+  };
+
+  gotoMyProfile = (e) => {
+    navigate(`/my-profile`);
   };
 
   render() {
@@ -88,7 +94,11 @@ export default class MyCarDetails extends Component {
           </div>
 
           <div className="row-t buttons-container-t">
-            <Button className="edit-btn-big-t" onClick={this.gotoEditCar}>
+            <Button
+              className="edit-btn-big-t"
+              onClick={this.gotoEditCar}
+              data-id={this.state.car.id}
+            >
               Edit
             </Button>
             <Button className="delete-btn-big-t" onClick={this.removeCar}>
@@ -96,7 +106,9 @@ export default class MyCarDetails extends Component {
             </Button>
           </div>
           <div className="row-m button-container">
-            <Button className="red-btn-t">Upload</Button>
+            <Button className="red-btn-t" onClick={this.gotoMyProfile}>
+              Upload
+            </Button>
           </div>
         </div>
       </div>

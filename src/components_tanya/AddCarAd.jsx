@@ -2,8 +2,12 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 import Axios from "axios";
 import * as UTILS from "../utils";
-
 import { navigate } from "@reach/router";
+import "../css/shared.css";
+import "../css_tanya/style.css";
+import "../css_tanya/addcar_form.css";
+
+import "../css_tanya/my_profile.css";
 
 export default class AddCarAd extends Component {
   constructor(props) {
@@ -51,10 +55,10 @@ export default class AddCarAd extends Component {
       <div className="main-content-t">
         <h2 className="vehicle-details-title">Vehicle details</h2>
         {/* <h2 className="vehicle-details ">Vehicle Details</h2> */}
-        <div className="card">
-          <div className="card-body px-lg-5 pt-0">
+        <div className="card form-container-t">
+          <div className="card-body   pt-0">
             <form onSubmit={this.addCar} ref={this.formRef}>
-              <div className=" main-redline-input md-form">
+              <div className=" main-redline-input  ">
                 {/* <label>Year</label> */}
                 <input id="year" type="string" name="year" placeholder="Year" />
               </div>
@@ -95,19 +99,26 @@ export default class AddCarAd extends Component {
               <div className="  md-form">
                 <input
                   id="seller_name"
-                  type="text"
+                  type="hidden"
                   name="seller_name"
                   value="user"
                 />
               </div>
               <input id="id" type="hidden" name="id" value={this.state.id} />
-
-              <input type="file" name="car_image" id="car_image" />
-              <button onClick={this.uploadToExpress} className="add-button">
-                Upload picture
-              </button>
-
-              <Button type="submit">Next</Button>
+              <div className=" main-redline-input md-form image-upload-container-t">
+                <input
+                  type="file"
+                  name="car_image"
+                  id="car_image"
+                  onChange={this.uploadToExpress}
+                />
+                {/* <button onClick={this.uploadToExpress} className="add-button">
+                  Upload picture
+                </button> */}
+              </div>
+              <Button className="  btn-next-t" type="submit">
+                Next
+              </Button>
             </form>
           </div>
         </div>

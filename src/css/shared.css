@@ -108,7 +108,7 @@ button {
 /* --------------------INPUT STYLE-------------------- */
 .main-redline-input {
   border-bottom: 2px solid #b42f47;
-  width: 32.8rem;
+  /* width: 32.8rem; */
   width: 85%;
   background-color: #1d1f2b;
   padding: 1.8rem;
