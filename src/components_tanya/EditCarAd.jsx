@@ -14,16 +14,17 @@ export default class EditCarAd extends Component {
 
     this.state = {
       car: {},
+      isLoaded: false,
     };
     this.formRef = React.createRef();
   }
 
   componentDidMount() {
-    // console.log(`${UTILS.cars_url}/${this.props.id}`);
+    console.log(`${UTILS.cars_url}/${this.props.id}`);
     Axios.get(`${UTILS.cars_url}/${this.props.id}`)
       .then((res) => {
         console.log(res.data);
-        this.setState({ car: res.data[0] });
+        this.setState({ car: res.data[0], isLoaded: true });
       })
       .catch((err) => console.log(err));
   }
@@ -32,24 +33,31 @@ export default class EditCarAd extends Component {
     e.preventDefault();
     var formData = new FormData(this.formRef.current);
 
-    var dataToSend = {
-      year: formData.get("year"),
-      make: formData.get("make"),
-      model: formData.get("model"),
-      price: formData.get("price"),
-      car_image: formData.get("car_image"),
-      id: formData.get("id"),
+    // FYI: form still works even if there is no image included
+    // forms with images look a bit different - we need to add this line.
+    var settings = {
+      headers: { "Content-Type": "multipart/form-data" },
     };
-    console.log(dataToSend);
-    Axios.put(`${UTILS.cars_url}/${this.props.id}`, dataToSend).then((res) => {
-      console.log(res);
-    });
+
+    Axios.put(`${UTILS.cars_url}/${this.props.id}`, formData, settings).then(
+      (res) => {
+        // do somenthing, update form for user again ?
+        console.log(res);
+      }
+    );
   };
 
   render() {
-    console.log(this.state);
-    const { year, make, model, price, car_image } = this.state.car;
+    // make a local variable from the state.car
+    const { car_image } = this.state.car;
+    const image_path = UTILS.assets_url + car_image;
+
+    console.log("hello ", this.state.isLoaded);
+
     return (
+      //    {
+      //   this.state.isLoaded === false && <span>loading</span>;
+      // }
       <div className="main-content-t">
         <h2 className="vehicle-details-title">Edit vehicle details</h2>
 
@@ -136,7 +144,15 @@ export default class EditCarAd extends Component {
                 {/* <button onClick={this.uploadToExpress} className="add-button">
                   Upload picture
                 </button> */}
-
+                <figure style={{ color: "snow" }}>
+                  <img
+                    src={image_path}
+                    width="100px"
+                    height="100px"
+                    alt="current car"
+                  />
+                  <figcaption>Name: {car_image}</figcaption>
+                </figure>
                 <input
                   type="file"
                   id="car_image"
