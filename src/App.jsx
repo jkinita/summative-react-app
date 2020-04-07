@@ -10,8 +10,8 @@ import "./css/shared.css";
 // Ella's components:
 import Home from "./components_ella/Home";
 import ViewCarDetails from "./components_ella/ViewCarDetails";
-import SearchCars from "./components_ella/SearchCars";
-import FilterdCars from "./components_ella/FilterdCars";
+import Header from "./components_ella/FooterMenu";
+import FooterMenu from "./components_ella/FooterMenu";
 
 // Tanya's components:
 
@@ -36,8 +36,8 @@ export default class App extends React.Component {
           <SplashPage path="/" />
           <LoginPage path="/login" />
           <Home path="/all-cars" />
-          <SearchCars path="/search-cars" />
-          <FilterdCars path="/filterd-cars" />
+          {/* <SearchCars path="/search-cars" />
+          <FilterdCars path="/filterd-cars" /> */}
           <ViewCarDetails path="/cars/:id" />
           <AddCarAd path="/add-car" />
           <EditCarAd path="/edit/:id" />

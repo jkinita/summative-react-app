@@ -1,13 +1,23 @@
 import React, { Component } from "react";
 import "../css/shared.css";
 import "../css_ella/home.css";
+import { navigate } from "@reach/router";
 
 export default class SingleCarAsCard extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
+  viewCarDetails = (e) => {
+    navigate(`/cars/:id/${this.state.id}`);
+  };
+
   render() {
+    console.log(this.props);
+    var carImage = this.props.car_image;
+    if (carImage != undefined && !carImage.startsWith("http"))
+      carImage = `http://localhost:4000/assets/${carImage}`;
     return (
       <div className="car-card">
         <img src={this.props.car_image} alt="carimage" />
@@ -17,18 +27,21 @@ export default class SingleCarAsCard extends Component {
           </h3>
           <hr />
           <div className="odometer-year-container">
-            <span>Odometer</span> <span>Year</span>
-            <span>{this.props.odometer}km</span>
-            <span>{this.props.year}</span>
-            {/* <p>
-              Odometer <br /> {this.props.odometer}km
+            <p>
+              Odometer <br /> <span>{this.props.odometer}km</span>
             </p>
             <p>
-              Year <br /> {this.props.year}
-            </p> */}
+              Year <br /> <span>{this.props.year}</span>
+            </p>
           </div>
           <p>${this.props.price}</p>
-          <button className="view-details-btn">View details</button>
+          <button
+            id={this.props._id}
+            onClick={this.viewCarDetails}
+            className="view-details-btn"
+          >
+            View details
+          </button>
         </div>
       </div>
     );
