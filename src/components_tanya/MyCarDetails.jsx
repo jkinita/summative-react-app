@@ -8,6 +8,7 @@ import picture_women from "../images/women.png";
 import "bootstrap/dist/css/bootstrap.css";
 import "../css/shared.css";
 import "../css_tanya/style.css";
+import "../css_tanya/car_details.css";
 
 export default class MyCarDetails extends Component {
   constructor(props) {
@@ -61,19 +62,19 @@ export default class MyCarDetails extends Component {
               alt="my-car-image"
             />
           </div>
-          <div className="row-t ">
+          <div className="row-t car-titles-container-t">
             <h1 className="make-big-title-t"> {this.state.car.make} </h1>
             <h1 className="model-big-title-t"> {this.state.car.model} </h1>
 
             <h1 className="price-big-title-t"> ${this.state.car.price}</h1>
           </div>
 
-          <div className="row-t">
+          <div className="row-t car-titles-container-t">
             <div className="year-odometer-conainer-t">
               <span className="my-car-sign-red">Year </span> <br />
               <span className="my-car-sign-white">{this.state.car.year}</span>
             </div>
-            <div>
+            <div className="year-odometer-conainer-t">
               <span className="my-car-sign-red">Odometer </span> <br />
               <span className="my-car-sign-white">
                 {this.state.car.odometer}km

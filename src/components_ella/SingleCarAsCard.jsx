@@ -8,9 +8,13 @@ export default class SingleCarAsCard extends Component {
     this.state = {};
   }
   render() {
+    console.log(this.props);
+    var carImage = this.props.car_image;
+    if (carImage != undefined && !carImage.startsWith("http"))
+      carImage = `http://localhost:4000/assets/${carImage}`;
     return (
       <div className="car-card">
-        <img src={this.props.car_image} alt="carimage" />
+        <img src={carImage} alt="carimage" />
         <div className="card-text-container">
           <h3>
             {this.props.make} {this.props.model}
