@@ -12,14 +12,14 @@ export default class Home extends Component {
 
   componentDidMount() {
     Axios.get(UTILS.cars_url).then(
-      res => {
+      (res) => {
         if (res.data.result === false) {
           this.setState({ result: false });
         } else {
           this.setState({ cars: res.data, result: true });
         }
       },
-      error => {
+      (error) => {
         console.log("error = ", error);
       }
     );
@@ -39,6 +39,7 @@ export default class Home extends Component {
               odometer={car.odometer}
               year={car.year}
               price={car.price}
+              uid={car._id}
             />
           );
         })}
