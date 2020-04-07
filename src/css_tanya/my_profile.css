@@ -68,7 +68,7 @@
 
  }
 
- .edit-profile-btn {
+ div>.edit-profile-btn-t {
      width: 16.4rem;
      font-size: 1.6rem;
      background-color: #464b59;
@@ -77,7 +77,7 @@
  }
 
 
- .delete-btn-small-t {
+ div>.delete-btn-small-t {
      width: 5rem;
      border-radius: 0.7rem;
      font-size: 1rem;
@@ -87,7 +87,7 @@
      color: #d92546;
  }
 
- .edit-btn-small-t {
+ div>.edit-btn-small-t {
      width: 5rem;
      border-radius: 0.7rem;
      font-size: 1rem;

@@ -10,20 +10,33 @@ import "./css/shared.css";
 // Ella's components:
 import Home from "./components_ella/Home";
 import ViewCarDetails from "./components_ella/ViewCarDetails";
+<<<<<<< HEAD
 import Header from "./components_ella/Header";
 import FooterNav from "./components_ella/FooterNav";
 
+=======
+import Header from "./components_ella/FooterMenu";
+import FooterMenu from "./components_ella/FooterMenu";
+import GlobalNav from "./components_joe/GlobalNav";
+import LoginPage from "./components_joe/LoginPage";
+import SplashPage from "./components_joe/SplashPage";
+>>>>>>> 614583027dbc69cbc2cb125c5c235f96a08c7779
 // Tanya's components:
 
 import AddCarAd from "./components_tanya/AddCarAd";
 import EditCarAd from "./components_tanya/EditCarAd";
 import MyCarDetails from "./components_tanya/MyCarDetails";
 import MyProfile from "./components_tanya/MyProfile";
+<<<<<<< HEAD
 
 // Joe's components:
 import LoginPage from "./components_joe/LoginPage";
 import SplashPage from "./components_joe/SplashPage";
 import SellerDetails from "./components_joe/SellerDetails";
+=======
+import SearchCars from "./components_tanya/SearchCars";
+import FilteredCars from "./components_tanya/FilteredCars";
+>>>>>>> 614583027dbc69cbc2cb125c5c235f96a08c7779
 
 export default class App extends React.Component {
   render() {
@@ -34,14 +47,17 @@ export default class App extends React.Component {
           <SplashPage path="/" />
           <LoginPage path="/login" />
           <Home path="/all-cars" />
-          {/* <SearchCars path="/search-cars" />
-          <FilterdCars path="/filterd-cars" /> */}
+          <SearchCars path="/search-cars" />
+          <FilteredCars path="/filtered-cars" />
           <ViewCarDetails path="/cars/:id" />
           <AddCarAd path="/add-car" />
           <EditCarAd path="/edit/:id" />
           <MyProfile path="/my-profile" />
           <MyCarDetails path="/my-car-details/:id" />
+<<<<<<< HEAD
           <SellerDetails path="/seller-details" />
+=======
+>>>>>>> 614583027dbc69cbc2cb125c5c235f96a08c7779
         </Router>
         <FooterNav />
       </React.Fragment>
