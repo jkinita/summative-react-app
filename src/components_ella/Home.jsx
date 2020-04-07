@@ -39,7 +39,7 @@ export default class Home extends Component {
               odometer={car.odometer}
               year={car.year}
               price={car.price}
-              uid={car._id}
+              id={car._id}
             />
           );
         })}
