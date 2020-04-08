@@ -9,6 +9,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../css/shared.css";
 import "../css_tanya/style.css";
 import "../css_tanya/car_details.css";
+import { FiPhone } from "react-icons/fi";
+import { FiShare2 } from "react-icons/fi";
 
 export default class MyCarDetails extends Component {
   constructor(props) {
@@ -86,11 +88,13 @@ export default class MyCarDetails extends Component {
               <img src={picture_women} alt="women-img" />
             </div>
             <h1>Jane Doe</h1>
+
             <div className="phone-icon-wrapper-t">
-              <img src="" alt="phone" />
+              <FiPhone />
             </div>
             <div className="plane-icon-wrapper-t">
-              <img src="" alt="plane" />
+              <FiPhone />
+              {/* <img src="" alt="plane" /> */}
             </div>
           </div>
 

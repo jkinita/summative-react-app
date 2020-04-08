@@ -67,7 +67,7 @@ export default class MyProfile extends Component {
             <div>
               <p className="email">janedoe12@gmail.com</p>
             </div>
-            <div className="edit-profile-btn-t">
+            <div className="edit-profile-btn-container-t">
               <Button className="edit-profile-btn-t">Edit profile</Button>
             </div>
           </div>
