@@ -1,0 +1,26 @@
+.sticky-list-e {
+  display: flex;
+  background-color: #f8f8f8;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  height: 8.1rem;
+  margin: 0;
+}
+
+.sticky-list-e li * {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  color: #727272;
+  font-size: 0.9rem;
+}
+
+.sticky-list-e li span {
+  margin-top: 0.3rem;
+}
+
+.sticky-container-e {
+  position: sticky;
+  bottom: 0;
+}

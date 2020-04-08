@@ -1,43 +1,43 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
-
-const menuStyle = {
-  display: "flex",
-  width: "30vw",
-  margin: "0 auto",
-  // justifyContent: "space-evenly",
-  alignItems: "center",
-  listStyleType: "none",
-};
-
-const LinkStyle = { color: "grey", padding: "0.3em" };
+import {
+  AiOutlineHome,
+  AiOutlineSearch,
+  AiOutlineCar,
+  AiOutlineUser,
+} from "react-icons/ai";
+import "../css_ella/globalnav.css";
 
 export default class GlobalNav extends Component {
   componentDidMount() {}
 
   render() {
     return (
-      <nav>
-        <ul style={menuStyle}>
+      <nav className="sticky-container-e">
+        <ul className="sticky-list-e">
           <li>
-            <Link style={LinkStyle} to="/all-cars">
-              Home
+            <Link className="dd" to="/all-cars">
+              <AiOutlineHome size={33} />
+              <span>Home</span>
             </Link>
           </li>
           <li>
-            <Link style={LinkStyle} to="/search-cars">
-              Search
+            <Link to="/search-cars">
+              <AiOutlineSearch size={32} />
+              <span>Search</span>
             </Link>
           </li>
 
           <li>
-            <Link style={LinkStyle} to="/add-car">
-              Sell
+            <Link to="/add-car">
+              <AiOutlineCar size={32} />
+              <span>Sell</span>
             </Link>
           </li>
           <li>
-            <Link style={LinkStyle} to="/my-profile">
-              Profile
+            <Link to="/my-profile">
+              <AiOutlineUser size={32} />
+              <span>Profile</span>
             </Link>
           </li>
         </ul>

@@ -3,7 +3,6 @@ import Axios from "axios";
 import "../css/shared.css";
 import "../css_ella/view_car_details.css";
 import * as UTILS from "../utils";
-import { FiShare2 } from "react-icons/fi";
 
 export default class SingleCar extends Component {
   constructor(props) {
@@ -33,15 +32,11 @@ export default class SingleCar extends Component {
     }
 
     return (
-      <div className="view-cardetails-container">
+      <div className="view-cardetails-container-e">
         <img src={carImage} alt="carimage" />
 
         <h1>
           {this.props.make} {this.props.model} ${this.props.price}
-        </h1>
-
-        <h1>
-          <FiShare2 />
         </h1>
 
         <div>
@@ -56,7 +51,7 @@ export default class SingleCar extends Component {
             <input type="hidden" name="car_name" value={this.props.model} />
           </form>
 
-          <button className="submit-btn" onClick={this.submitComment}>
+          <button className="submit-btn-e" onClick={this.submitComment}>
             Submit
           </button>
         </div>
