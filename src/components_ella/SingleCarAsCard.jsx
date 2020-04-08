@@ -20,14 +20,14 @@ export default class SingleCarAsCard extends Component {
       carImage = `http://localhost:4000/assets/${carImage}`;
 
     return (
-      <div className="car-card">
+      <div className="car-card-e">
         <img src={carImage} alt="carimage" />
-        <div className="card-text-container">
+        <div className="card-text-container-e">
           <h3>
             {this.props.make} {this.props.model}
           </h3>
           <hr />
-          <div className="odometer-year-container">
+          <div className="odometer-year-container-e">
             <p>
               Odometer <br /> <span>{this.props.odometer}km</span>
             </p>

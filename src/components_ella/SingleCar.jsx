@@ -3,13 +3,11 @@ import Axios from "axios";
 import "../css/shared.css";
 import "../css_ella/view_car_details.css";
 import * as UTILS from "../utils";
-import { FiShare2 } from "react-icons/fi";
 
 export default class SingleCar extends Component {
   constructor(props) {
     super(props);
     this.formRef = React.createRef();
-
     console.table(this.props);
   }
 
@@ -29,18 +27,16 @@ export default class SingleCar extends Component {
 
   render() {
     var carImage = this.props.car_image;
-    if (carImage !== undefined && !carImage.startsWith("http"))
-      carImage = `http://localhost:4000/assets/${carImage}`;
+    if (carImage !== undefined && !carImage.startsWith("http")) {
+      carImage = `UTILS.assets_url ${carImage}`;
+    }
+
     return (
-      <div className="view-cardetails-container">
+      <div className="view-cardetails-container-e">
         <img src={carImage} alt="carimage" />
 
         <h1>
           {this.props.make} {this.props.model} ${this.props.price}
-        </h1>
-
-        <h1>
-          <FiShare2 />
         </h1>
 
         <div>
@@ -52,14 +48,10 @@ export default class SingleCar extends Component {
               rows="3"
               placeholder="Your Comment"
             ></textarea>
-            <input
-              type="hidden"
-              name="user_name"
-              value={this.props.user_name}
-            />
+            <input type="hidden" name="car_name" value={this.props.model} />
           </form>
 
-          <button className="submit-btn" onClick={this.submitComment}>
+          <button className="submit-btn-e" onClick={this.submitComment}>
             Submit
           </button>
         </div>

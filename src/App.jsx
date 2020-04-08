@@ -30,8 +30,8 @@ export default class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
         <Router>
+          <Header />
           <SplashPage path="/" />
           <LoginPage path="/login" />
           <Home path="/all-cars" />

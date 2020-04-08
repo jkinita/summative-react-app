@@ -28,6 +28,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+        <h1>Featured Cars</h1>
         {this.state.result === false ? <p>no cars returned</p> : null}
         {this.state.cars.map((car, i) => {
           return (
