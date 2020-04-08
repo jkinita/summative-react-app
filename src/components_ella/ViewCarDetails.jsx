@@ -4,6 +4,7 @@ import * as UTILS from "../utils";
 import Axios from "axios";
 import SingleCar from "./SingleCar";
 import Comments from "./Comments";
+// import BottomSingleCar from "./BottomSingleCar";
 
 export default class ViewCarDetails extends Component {
   constructor(props) {
@@ -41,13 +42,15 @@ export default class ViewCarDetails extends Component {
                 make={car.make}
                 model={car.model}
                 car_image={car.car_image}
+                price={car.price}
                 year={car.year}
                 odometer={car.odometer}
-                seller={car.seller_name}
                 commentAdded={this.commentAdded}
               />
 
-              <Comments />
+              <Comments comments={car.comments} />
+
+              {/* <BottomSingleCar seller={car.seller_name} /> */}
             </div>
           );
         })}

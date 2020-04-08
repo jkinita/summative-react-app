@@ -10,7 +10,7 @@ export default class SingleCarAsCard extends Component {
   }
 
   viewCarDetails = (e) => {
-    navigate(`/cars/:id/${this.state.id}`);
+    navigate(`/cars/${this.props.id}`);
   };
 
   render() {
@@ -18,9 +18,10 @@ export default class SingleCarAsCard extends Component {
     var carImage = this.props.car_image;
     if (carImage !== undefined && !carImage.startsWith("http"))
       carImage = `http://localhost:4000/assets/${carImage}`;
+
     return (
       <div className="car-card">
-        <img src={this.props.car_image} alt="carimage" />
+        <img src={carImage} alt="carimage" />
         <div className="card-text-container">
           <h3>
             {this.props.make} {this.props.model}
@@ -35,11 +36,7 @@ export default class SingleCarAsCard extends Component {
             </p>
           </div>
           <p>${this.props.price}</p>
-          <button
-            id={this.props._id}
-            onClick={this.viewCarDetails}
-            className="view-details-btn"
-          >
+          <button onClick={this.viewCarDetails} className="view-details-btn">
             View details
           </button>
         </div>

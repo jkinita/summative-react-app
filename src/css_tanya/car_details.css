@@ -1,0 +1,115 @@
+.my-car-details-container-t {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-car-image-wrapper-t {
+  margin-bottom: 2rem;
+  background-color: #fffffc;
+  border-radius: 1rem;
+  padding: 0.1rem 1.5rem;
+}
+
+.my-car-image-wrapper-t > img {
+  max-width: 100%;
+  width: 255px;
+}
+
+.make-big-title-t {
+  padding-right: 0.7rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.car-titles-container-t {
+  margin-right: 5rem;
+  margin-top: 5%;
+}
+
+.phone-icon-wrapper-t {
+  margin-top: 3.5rem;
+}
+
+.plane-icon-wrapper-t {
+  margin-top: 3.5rem;
+}
+
+.model-big-title-t {
+  padding-right: 2rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.price-big-title-t {
+  padding-right: 2rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.year-odometer-conainer-t {
+  padding-right: 6rem;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+
+.user-small-image-wrapper-t > img {
+  max-width: 100%;
+  width: 80px;
+  border-radius: 120px;
+}
+
+.user-details-container-horisontal-t {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 4rem;
+  margin-left: 4.5rem;
+}
+
+.user-details-container-horisontal-t > h1 {
+  font-weight: 600;
+  width: 118px;
+  margin-top: 2.5rem;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.row-t > .edit-btn-bigger {
+  margin-right: 2rem;
+}
+
+.buttons-container-t {
+  display: flex;
+
+  margin-bottom: 3rem;
+}
+
+.red-btn-t {
+  width: 30.2rem;
+  border-radius: 1rem;
+  background-color: #d92546;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+}
+
+.edit-btn-big-t {
+  width: 13.8rem;
+  font-size: 1.6rem;
+  background-color: #464b59;
+  border-radius: 1rem;
+  margin-right: 2rem;
+}
+
+.delete-btn-big-t {
+  width: 13.8rem;
+  border-radius: 1rem;
+  background-color: #1d1f2b;
+  border: 1.5px solid #d92546;
+  font-size: 1.3rem;
+  color: #d92546;
+  padding: 0.4rem;
+}
+
+.phone-icon-wrapper-t {
+  color: #d92546;
+}

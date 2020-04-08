@@ -18,20 +18,20 @@ body #root {
 }
 
 /* --------------------FONT STYLE-------------------- */
-h1 {
+body h1 {
   font-size: 2.1rem;
   color: #fffffc;
   font-style: italic;
   font-weight: 600;
 }
 
-h2 {
+body h2 {
   font-size: 1.6rem;
   color: #fffffc;
 }
 
-h3 {
-  font-size: 1.2rem;
+body h3 {
+  font-size: 1.3rem;
   color: #464b59;
 }
 
@@ -115,5 +115,5 @@ button {
 }
 
 .user-title-red {
-  color: #B42F47
+  color: #b42f47;
 }

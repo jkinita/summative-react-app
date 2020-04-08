@@ -24,6 +24,11 @@ export default class MyProfile extends Component {
     console.log("go to edit");
   };
 
+  MyCarDetails = (evt) => {
+    var carid = evt.target.getAttribute("data-id");
+    navigate(`/my-car-details/${carid}`);
+  };
+
   refreshData = () => {
     Axios.get(`${UTILS.cars_url}`).then(
       (res) => {
@@ -62,8 +67,8 @@ export default class MyProfile extends Component {
             <div>
               <p className="email">janedoe12@gmail.com</p>
             </div>
-            <div>
-              <Button className="edit-profile-btn">Edit profile</Button>
+            <div className="edit-profile-btn-container-t">
+              <Button className="edit-profile-btn-t">Edit profile</Button>
             </div>
           </div>
         </div>
@@ -96,7 +101,11 @@ export default class MyProfile extends Component {
                     </div>
                     <div className="row-t">
                       <div className="column-t ">
-                        <button className="view-details-btn-t">
+                        <button
+                          className="view-details-btn-t"
+                          data-id={car.id}
+                          onClick={this.MyCarDetails}
+                        >
                           View details >
                         </button>
                       </div>

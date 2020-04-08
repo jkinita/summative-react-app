@@ -116,7 +116,7 @@ export default class AddCarAd extends Component {
                   Upload picture
                 </button> */}
               </div>
-              <Button className="  btn-next-t" type="submit">
+              <Button className=" red-btn-t  btn-next-t" type="submit">
                 Next
               </Button>
             </form>
