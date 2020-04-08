@@ -23,16 +23,10 @@
 }
 
 .car-titles-container-t {
-  margin-right: 5rem;
+  margin-right: 8rem;
   margin-top: 5%;
-}
-
-.phone-icon-wrapper-t {
-  margin-top: 3.5rem;
-}
-
-.plane-icon-wrapper-t {
-  margin-top: 3.5rem;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .model-big-title-t {
@@ -47,15 +41,22 @@
   font-weight: 600;
 }
 
-.year-odometer-conainer-t {
-  padding-right: 6rem;
+.year-odometer-container-t {
+  margin-top: 5%;
   margin-bottom: 4rem;
-  margin-top: 2rem;
+}
+
+.odometer-conainer-t {
+  padding-right: 7rem;
+}
+
+.year-conainer-t {
+  padding-right: 11rem;
 }
 
 .user-small-image-wrapper-t > img {
   max-width: 100%;
-  width: 80px;
+  width: 65px;
   border-radius: 120px;
 }
 
@@ -63,14 +64,14 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 4rem;
-  margin-left: 4.5rem;
+  /* margin-left: 4.5rem; */
 }
 
 .user-details-container-horisontal-t > h1 {
   font-weight: 600;
   width: 118px;
   margin-top: 2.5rem;
-  margin-right: 1.5rem;
+  margin-right: 2.8rem;
   margin-left: 1.5rem;
 }
 
@@ -112,4 +113,12 @@
 
 .phone-icon-wrapper-t {
   color: #d92546;
+  font-size: 2.7rem;
+  margin-top: 1.5rem;
+  padding-right: 1.3rem;
+}
+.plane-icon-wrapper-t {
+  color: #d92546;
+  margin-top: 1.7rem;
+  font-size: 2.7rem;
 }

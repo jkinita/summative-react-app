@@ -30,7 +30,7 @@ export default class FilteredCars extends Component {
     var sortHigh = this.props.location.state.sortHigh;
     // var sortLow = this.props.location.state.sortlow;
     return (
-      <div>
+      <div className="main-content-t">
         {this.state.result === false ? <p>no cars returned</p> : null}
         {this.state.cars
           .filter((car) => car.make == make)

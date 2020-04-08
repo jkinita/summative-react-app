@@ -11,6 +11,7 @@ import "../css_tanya/style.css";
 import "../css_tanya/car_details.css";
 import { FiPhone } from "react-icons/fi";
 import { FiShare2 } from "react-icons/fi";
+import { FiMail } from "react-icons/fi";
 
 export default class MyCarDetails extends Component {
   constructor(props) {
@@ -71,12 +72,12 @@ export default class MyCarDetails extends Component {
             <h1 className="price-big-title-t"> ${this.state.car.price}</h1>
           </div>
 
-          <div className="row-t car-titles-container-t">
-            <div className="year-odometer-conainer-t">
+          <div className="row-t year-odometer-container-t">
+            <div className="year-conainer-t">
               <span className="my-car-sign-red">Year </span> <br />
               <span className="my-car-sign-white">{this.state.car.year}</span>
             </div>
-            <div className="year-odometer-conainer-t">
+            <div className="odometer-conainer-t">
               <span className="my-car-sign-red">Odometer </span> <br />
               <span className="my-car-sign-white">
                 {this.state.car.odometer}km
@@ -93,7 +94,7 @@ export default class MyCarDetails extends Component {
               <FiPhone />
             </div>
             <div className="plane-icon-wrapper-t">
-              <FiPhone />
+              <FiMail />
               {/* <img src="" alt="plane" /> */}
             </div>
           </div>
