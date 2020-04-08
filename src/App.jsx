@@ -31,7 +31,7 @@ export default class App extends React.Component {
     return (
       <React.Fragment>
         <Router>
-          <Header />
+          {/* <Header /> */}
           <SplashPage path="/" />
           <LoginPage path="/login" />
           <Home path="/all-cars" />

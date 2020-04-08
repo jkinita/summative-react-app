@@ -16,7 +16,7 @@ export default class GlobalNav extends Component {
       <nav className="sticky-container-e">
         <ul className="sticky-list-e">
           <li>
-            <Link className="dd" to="/all-cars">
+            <Link to="/all-cars">
               <AiOutlineHome size={33} />
               <span>Home</span>
             </Link>
