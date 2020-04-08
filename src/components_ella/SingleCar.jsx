@@ -9,7 +9,6 @@ export default class SingleCar extends Component {
   constructor(props) {
     super(props);
     this.formRef = React.createRef();
-
     console.table(this.props);
   }
 
@@ -29,8 +28,10 @@ export default class SingleCar extends Component {
 
   render() {
     var carImage = this.props.car_image;
-    if (carImage !== undefined && !carImage.startsWith("http"))
-      carImage = `http://localhost:4000/assets/${carImage}`;
+    if (carImage !== undefined && !carImage.startsWith("http")) {
+      carImage = `UTILS.assets_url ${carImage}`;
+    }
+
     return (
       <div className="view-cardetails-container">
         <img src={carImage} alt="carimage" />
@@ -52,11 +53,7 @@ export default class SingleCar extends Component {
               rows="3"
               placeholder="Your Comment"
             ></textarea>
-            <input
-              type="hidden"
-              name="user_name"
-              value={this.props.user_name}
-            />
+            <input type="hidden" name="car_name" value={this.props.model} />
           </form>
 
           <button className="submit-btn" onClick={this.submitComment}>
