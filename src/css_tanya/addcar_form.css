@@ -43,10 +43,14 @@ form>.red-btn-t {
 }
 
 
-btn-next-t {
+.btn-next-t {
     width: 30.2rem;
     border-radius: 1rem;
     background-color: #d92546;
     padding: 1.2rem;
     font-size: 1.8rem;
+}
+
+input#carimage {
+    color: white;
 }
