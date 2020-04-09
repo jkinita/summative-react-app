@@ -17,6 +17,25 @@ body #root {
   font-family: "Open Sans", sans-serif;
 }
 
+.header {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.header-w-arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.header-w-arrow h1:first-child {
+  color: #d92546;
+  font-size: 3rem;
+}
+
 /* --------------------FONT STYLE-------------------- */
 body h1 {
   font-size: 2.1rem;

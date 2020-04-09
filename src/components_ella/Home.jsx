@@ -3,6 +3,7 @@ import Axios from "axios";
 import * as UTILS from "../utils";
 import SingleCarAsCard from "./SingleCarAsCard";
 import "../css_ella/home.css";
+// import { findAllByDisplayValue } from "@testing-library/react";
 
 export default class Home extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Featured Cars</h1>
+        <h1 className="header">Featured Cars</h1>
         {this.state.result === false ? <p>no cars returned</p> : null}
         {this.state.cars.map((car, i) => {
           return (
