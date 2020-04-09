@@ -4,6 +4,7 @@ import * as UTILS from "../utils";
 import Axios from "axios";
 import SingleCar from "./SingleCar";
 import Comments from "./Comments";
+import { IoIosArrowBack } from "react-icons/io";
 // import BottomSingleCar from "./BottomSingleCar";
 
 export default class ViewCarDetails extends Component {
@@ -35,6 +36,15 @@ export default class ViewCarDetails extends Component {
   render() {
     return (
       <div>
+        <div className="header-w-arrow">
+          <h1>
+            <IoIosArrowBack />
+          </h1>
+          <h1>View Details</h1>
+          <h1 style={{ visibility: "hidden" }}>
+            <IoIosArrowBack />
+          </h1>
+        </div>
         {this.state.cars.map((car, i) => {
           return (
             <div key={Date.now()}>
