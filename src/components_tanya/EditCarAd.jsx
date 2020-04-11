@@ -145,13 +145,17 @@ export default class EditCarAd extends Component {
                   Upload picture
                 </button> */}
                 <figure style={{ color: "snow" }}>
-                  <img
+                  {/* <img className=""
                     src={image_path}
+                    display="none"
                     width="100px"
                     height="100px"
                     alt="current car"
-                  />
-                  <figcaption>Name: {car_image}</figcaption>
+                  /> */}
+                  <figcaption className="image-name-t">
+                    {" "}
+                    Current pic:{car_image}
+                  </figcaption>
                 </figure>
                 <input
                   type="file"
