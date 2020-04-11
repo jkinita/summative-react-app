@@ -169,7 +169,7 @@ export default class SearchCars extends Component {
               {/* <input id="id" type="hidden" name="id" value={this.state.id} /> */}
 
               <Button
-                className=" search-btn red-btn-t"
+                className=" search-btn-t red-btn-t"
                 type="submit"
                 //   data-id={cars.id}
               >
