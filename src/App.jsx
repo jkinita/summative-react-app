@@ -12,7 +12,6 @@ import Home from "./components_ella/Home";
 import ViewCarDetails from "./components_ella/ViewCarDetails";
 import Header from "./components_ella/Header";
 import FooterNav from "./components_ella/FooterNav";
-import LoginPage from "./components_joe/LoginPage";
 import SplashPage from "./components_joe/SplashPage";
 
 // Tanya's components:
@@ -23,8 +22,8 @@ import MyCarDetails from "./components_tanya/MyCarDetails";
 import MyProfile from "./components_tanya/MyProfile";
 import SearchCars from "./components_tanya/SearchCars";
 import FilteredCars from "./components_tanya/FilteredCars";
-
-// Joe's components:
+import EditedCarDetails from "./components_tanya/EditedCarDetails";
+import LoginPage from "./components_tanya/LoginPage";
 
 export default class App extends React.Component {
   render() {
@@ -41,6 +40,7 @@ export default class App extends React.Component {
           <EditCarAd path="/edit/:id" />
           <MyProfile path="/my-profile" />
           <MyCarDetails path="/my-car-details/:id" />
+          <EditedCarDetails path="/edited-car-details/:id" />
         </Router>
         <FooterNav />
       </React.Fragment>
