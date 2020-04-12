@@ -8,17 +8,31 @@ import "../css_tanya/style.css";
 import "../css_tanya/addcar_form.css";
 
 import "../css_tanya/my_profile.css";
+import CarMakeDropdown from "./CarMakeDropdown";
+import YearDropdown from "./YearDropdown";
 
 export default class AddCarAd extends Component {
   constructor(props) {
     super(props);
     this.formRef = React.createRef();
-    this.state = { id: Date.now() };
+    this.state = { id: Date.now(), selectedMake: "", selectedYear: 2020 };
   }
 
   // MyCarDetails = (e) => {
   //   navigate(`/my-car-details/${this.data.id}`);
   // };
+
+  selectMake = (evt) => {
+    var make = evt.target.getAttribute("data-make");
+    if (make == null) return;
+    this.setState({ selectedMake: make });
+  };
+
+  selectYear = (evt) => {
+    var year = evt.target.getAttribute("data-year");
+    if (year == null) return;
+    this.setState({ selectedYear: year });
+  };
 
   addCar = (e) => {
     e.preventDefault();
@@ -60,14 +74,32 @@ export default class AddCarAd extends Component {
             <form onSubmit={this.addCar} ref={this.formRef}>
               <div className=" main-redline-input  ">
                 {/* <label>Year</label> */}
-                <input id="year" type="string" name="year" placeholder="Year" />
+                <input
+                  id="year"
+                  type="hidden"
+                  value={this.state.selectedYear}
+                  name="year"
+                />
+                <YearDropdown
+                  selectedYear={this.state.selectedYear}
+                  selectYear={this.selectYear}
+                />
               </div>
 
               <div className=" main-redline-input md-form">
                 {/* <label>Make</label> */}
-                <input type="text" name="make" placeholder="Make" />
+                <input
+                  id="make"
+                  type="hidden"
+                  value={this.state.selectedMake}
+                  name="make"
+                  placeholder="Make"
+                />
+                <CarMakeDropdown
+                  selectMake={this.selectMake}
+                  selectedMake={this.state.selectedMake}
+                />
               </div>
-
               <div className=" main-redline-input md-form">
                 {/* <label>Model</label> */}
                 <input
@@ -86,7 +118,6 @@ export default class AddCarAd extends Component {
                   placeholder="Odometer"
                 />
               </div>
-
               <div className=" main-redline-input md-form">
                 {/* <label>Price</label> */}
                 <input
