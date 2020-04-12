@@ -27,6 +27,9 @@ export default class MyProfile extends Component {
   MyCarDetails = (evt) => {
     var carid = evt.target.getAttribute("data-id");
     navigate(`/my-car-details/${carid}`);
+
+    if (document.getElementById("upload-btn-t") != null)
+      document.getElementById("upload-btn-t").style.display = "none";
   };
 
   refreshData = () => {

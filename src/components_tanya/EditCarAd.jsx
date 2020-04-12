@@ -43,6 +43,7 @@ export default class EditCarAd extends Component {
       (res) => {
         // do somenthing, update form for user again ?
         console.log(res);
+        navigate(`/edited-car-details/${this.props.id}`);
       }
     );
   };
@@ -164,7 +165,11 @@ export default class EditCarAd extends Component {
                   defaultValue={car_image}
                 ></input>
               </div>
-              <Button className="red-btn-t" type="submit">
+              <Button
+                className="red-btn-t"
+                type="submit"
+                data-id={this.state.car.id}
+              >
                 Submit
               </Button>
             </form>

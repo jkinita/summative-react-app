@@ -16,9 +16,9 @@ export default class AddCarAd extends Component {
     this.state = { id: Date.now() };
   }
 
-  MyCarDetails = (e) => {
-    navigate(`/my-car-details/${this.data.id}`);
-  };
+  // MyCarDetails = (e) => {
+  //   navigate(`/my-car-details/${this.data.id}`);
+  // };
 
   addCar = (e) => {
     e.preventDefault();
