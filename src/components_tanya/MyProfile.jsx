@@ -8,13 +8,17 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../css/shared.css";
 import "../css_tanya/style.css";
 import "../css_tanya/my_profile.css";
+
 import picture_women from "../images/women.png";
+import ConfirmDeleteModal from "./ConfirmDeleteModal";
 
 export default class MyProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
       cars: [],
+      modal: false,
+      deleteId: "",
     };
   }
 
@@ -54,6 +58,25 @@ export default class MyProfile extends Component {
       console.log(res.data);
       this.refreshData();
     });
+  };
+
+  closeModal = (e) => {
+    const response = e.target.getAttribute("data-response");
+
+    if (response == "true") {
+      Axios.delete(`${UTILS.cars_url}/${this.state.deleteId}`).then((res) => {
+        console.log(res.data);
+        this.setState({ modal: false });
+        this.refreshData();
+      });
+    } else {
+      this.setState({ modal: false });
+    }
+  };
+
+  openModal = (e) => {
+    var carid = e.target.getAttribute("data-id");
+    this.setState({ modal: true, deleteId: carid });
   };
 
   render() {
@@ -125,8 +148,10 @@ export default class MyProfile extends Component {
                       <div className="column-t">
                         <Button
                           data-id={car.id}
-                          className="delete-btn-small-t"
-                          onClick={this.removeCar}
+                          className="delete-btn-small-t  btn btn-primary"
+                          onClick={this.openModal}
+                          data-toggle="modal"
+                          data-target="#centralModalSm"
                         >
                           Delete
                         </Button>
@@ -137,6 +162,11 @@ export default class MyProfile extends Component {
               );
             })}
         </div>
+
+        <ConfirmDeleteModal
+          closeModal={this.closeModal}
+          modal={this.state.modal}
+        />
       </div>
     );
   }
