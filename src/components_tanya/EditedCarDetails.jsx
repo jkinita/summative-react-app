@@ -60,7 +60,6 @@ export default class MyCarDetails extends Component {
         <div className="my-car-details-container-t">
           <div className=" row-t my-car-image-wrapper-t">
             <img
-              // width={100}
               src={`http://localhost:4000/assets/${this.state.car.car_image}`}
               alt="my-car-image"
             />

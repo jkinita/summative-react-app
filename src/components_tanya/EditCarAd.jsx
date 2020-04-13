@@ -3,6 +3,8 @@ import Axios from "axios";
 import { navigate } from "@reach/router";
 import * as UTILS from "../utils";
 import { Button } from "reactstrap";
+import CarMakeDropdown from "./CarMakeDropdown";
+import YearDropdown from "./YearDropdown";
 import "../css/shared.css";
 import "../css_tanya/style.css";
 import "../css_tanya/my_profile.css";
@@ -13,18 +15,38 @@ export default class EditCarAd extends Component {
     super(props);
 
     this.state = {
+      id: Date.now(),
       car: {},
       isLoaded: false,
+      selectedMake: "",
+      selectedYear: "",
     };
     this.formRef = React.createRef();
   }
+
+  selectMake = (evt) => {
+    var make = evt.target.getAttribute("data-make");
+    if (make == null) return;
+    this.setState({ selectedMake: make });
+  };
+
+  selectYear = (evt) => {
+    var year = evt.target.getAttribute("data-year");
+    if (year == null) return;
+    this.setState({ selectedYear: year });
+  };
 
   componentDidMount() {
     console.log(`${UTILS.cars_url}/${this.props.id}`);
     Axios.get(`${UTILS.cars_url}/${this.props.id}`)
       .then((res) => {
         console.log(res.data);
-        this.setState({ car: res.data[0], isLoaded: true });
+        this.setState({
+          car: res.data[0],
+          isLoaded: true,
+          selectedMake: res.data[0].make,
+          selectedYear: res.data[0].year,
+        });
       })
       .catch((err) => console.log(err));
   }
@@ -52,7 +74,6 @@ export default class EditCarAd extends Component {
     // make a local variable from the state.car
     const { car_image } = this.state.car;
     const image_path = UTILS.assets_url + car_image;
-
     console.log("hello ", this.state.isLoaded);
 
     return (
@@ -69,20 +90,26 @@ export default class EditCarAd extends Component {
                 {/* <label>Year</label> */}
                 <input
                   id="year"
-                  type="string"
+                  type="hidden"
                   name="year"
-                  placeholder="Year"
-                  defaultValue={this.state.car.year}
+                  value={this.state.selectedYear}
+                />
+                <YearDropdown
+                  selectedYear={this.state.selectedYear}
+                  selectYear={this.selectYear}
                 />
               </div>
 
               <div className=" main-redline-input md-form">
-                {/* <label>Make</label> */}
                 <input
-                  type="text"
+                  type="hidden"
                   name="make"
                   placeholder="Make"
-                  defaultValue={this.state.car.make}
+                  value={this.state.selectedMake}
+                />
+                <CarMakeDropdown
+                  selectMake={this.selectMake}
+                  selectedMake={this.state.selectedMake}
                 />
               </div>
 

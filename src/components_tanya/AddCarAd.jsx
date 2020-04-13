@@ -15,7 +15,11 @@ export default class AddCarAd extends Component {
   constructor(props) {
     super(props);
     this.formRef = React.createRef();
-    this.state = { id: Date.now(), selectedMake: "", selectedYear: 2020 };
+    this.state = {
+      id: Date.now(),
+      selectedMake: "Select Make",
+      selectedYear: "Select  Year",
+    };
   }
 
   // MyCarDetails = (e) => {
@@ -72,13 +76,14 @@ export default class AddCarAd extends Component {
         <div className="card form-container-t">
           <div className="card-body   pt-0">
             <form onSubmit={this.addCar} ref={this.formRef}>
-              <div className=" main-redline-input  ">
+              <div className=" main-redline-input container-t year-container-t  ">
                 {/* <label>Year</label> */}
                 <input
                   id="year"
                   type="hidden"
                   value={this.state.selectedYear}
                   name="year"
+                  placeholder="Year"
                 />
                 <YearDropdown
                   selectedYear={this.state.selectedYear}
@@ -86,7 +91,7 @@ export default class AddCarAd extends Component {
                 />
               </div>
 
-              <div className=" main-redline-input md-form">
+              <div className=" main-redline-input container-t">
                 {/* <label>Make</label> */}
                 <input
                   id="make"
