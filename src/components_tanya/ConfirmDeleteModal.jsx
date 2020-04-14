@@ -11,7 +11,7 @@ export default class ConfirmDeleteModal extends Component {
     return (
       <Modal className="modal-container-t" isOpen={modal} toggle={closeModal}>
         <ModalHeader toggle={closeModal}></ModalHeader>
-        <ModalBody>Are you sure you want to delete this add?</ModalBody>
+        <ModalBody>Are you sure you want to delete this ad?</ModalBody>
         <ModalFooter>
           <Button
             data-response={true}
