@@ -10,14 +10,16 @@ import "../css/shared.css";
 import "../css_tanya/style.css";
 import "../css_tanya/car_details.css";
 import { FiPhone } from "react-icons/fi";
-import { FiShare2 } from "react-icons/fi";
 import { FiMail } from "react-icons/fi";
+import ConfirmDeleteModal from "./ConfirmDeleteModal";
 
 export default class MyCarDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
       car: {},
+      modal: false,
+      deleteId: "",
     };
   }
   //we getting info from jason through server
@@ -32,8 +34,9 @@ export default class MyCarDetails extends Component {
     );
   }
 
-  removeCar = () => {
-    Axios.delete(`${UTILS.cars_url}/${this.props.id}`).then(
+  removeCar = (evt) => {
+    var carid = evt.target.getAttribute("data-id");
+    Axios.delete(`${UTILS.cars_url}/${carid}`).then(
       (res) => {
         console.log("DELETED");
         //navigate("/all-cars");
@@ -42,6 +45,25 @@ export default class MyCarDetails extends Component {
         console.log("error = ", error);
       }
     );
+  };
+
+  closeModal = (e) => {
+    const response = e.target.getAttribute("data-response");
+
+    if (response == "true") {
+      Axios.delete(`${UTILS.cars_url}/${this.state.deleteId}`).then((res) => {
+        console.log(res.data);
+        this.setState({ modal: false });
+        this.gotoMyProfile();
+      });
+    } else {
+      this.setState({ modal: false });
+    }
+  };
+
+  openModal = (e) => {
+    var carid = e.target.getAttribute("data-id");
+    this.setState({ modal: true, deleteId: carid });
   };
 
   gotoEditCar = (evt) => {
@@ -60,7 +82,6 @@ export default class MyCarDetails extends Component {
         <div className="my-car-details-container-t">
           <div className=" row-t my-car-image-wrapper-t">
             <img
-              // width={100}
               src={`http://localhost:4000/assets/${this.state.car.car_image}`}
               alt="my-car-image"
             />
@@ -107,13 +128,17 @@ export default class MyCarDetails extends Component {
             >
               Edit
             </Button>
-            <Button className="delete-btn-big-t" onClick={this.removeCar}>
+            <Button
+              className="delete-btn-big-t"
+              onClick={this.openModal}
+              data-id={this.state.car.id}
+            >
               Delete
             </Button>
           </div>
           <div className="row-m button-container">
             <Button
-              id="upload-btn-t"
+              // id="upload-btn-t"
               className="red-btn-t"
               onClick={this.gotoMyProfile}
             >
@@ -121,6 +146,10 @@ export default class MyCarDetails extends Component {
             </Button>
           </div>
         </div>
+        <ConfirmDeleteModal
+          closeModal={this.closeModal}
+          modal={this.state.modal}
+        />
       </div>
     );
   }

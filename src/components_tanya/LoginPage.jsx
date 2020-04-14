@@ -10,20 +10,29 @@ import "../css_tanya/addcar_form.css";
 import "../css_tanya/login.css";
 
 export default class LoginPage extends Component {
+  GotoHomePage = (e) => {
+    e.preventDefault();
+    var userName = document.getElementById("username");
+    var password = document.getElementById("password");
+    if (userName.value == "" || password.value == "") {
+      alert("Wrong username or password");
+    } else {
+      navigate(`/all-cars`);
+    }
+  };
+
   render() {
     return (
       <div className="main-content-t">
         <div className="card form-container-t">
           <div className="logo-container-t">
             <h1>TradeAuto</h1>
-            <span>Buy&sell</span>
+            <span>Buy&Sell</span>
           </div>
 
           <div className="card-body   pt-0">
-            <form
-            // onSubmit={this.gotoFilterdCars            }
-            >
-              <div className=" main-redline-input container">
+            <form onSubmit={this.GotoHomePage}>
+              <div className=" main-redline-input container-t">
                 <input
                   id="username"
                   type="text"
@@ -45,11 +54,7 @@ export default class LoginPage extends Component {
                 <span> Forgot password ></span>
               </div>
 
-              <Button
-                className=" sign-in-btn-t red-btn-t"
-                // type="submit"
-                //   data-id={cars.id}
-              >
+              <Button className=" sign-in-btn-t red-btn-t" type="submit">
                 Sign in
               </Button>
             </form>
