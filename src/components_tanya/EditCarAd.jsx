@@ -69,6 +69,23 @@ export default class EditCarAd extends Component {
       }
     );
   };
+  separateNumber = () => {
+    var numberToCovert = document.querySelector(".odometer-input-t");
+    var val = numberToCovert.value.replace(/,/g, "");
+
+    var output = val.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    numberToCovert.value = output;
+  };
+  // separateNumber = () => {
+  //   var numberToCovert = document.querySelectorAll(".change-input-format-t");
+  //   var i;
+  //   for (i = 0; i < numberToCovert.length; i++) {
+  //     var singleInput = numberToCovert[i];
+  //     var val = singleInput.value.replace(/,/g, "");
+  //     var output = val.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  //     singleInput.value = output;
+  //   }
+  // };
 
   render() {
     // make a local variable from the state.car
@@ -126,22 +143,27 @@ export default class EditCarAd extends Component {
               <div className="main-redline-input md-form">
                 {/* <label>Odometer</label> */}
                 <input
+                  className="odometer-input-t"
                   id="odometer"
-                  type="number"
+                  // type="number"
                   name="odometer"
                   placeholder="Odometer"
                   defaultValue={this.state.car.odometer}
+                  onChange={this.separateNumber}
                 />
               </div>
 
               <div className=" main-redline-input md-form">
                 {/* <label>Price</label> */}
                 <input
+                  // className="change-input-format-t"
+                  className="price-input-t"
                   id="price"
-                  type="number"
+                  // type="number"
                   name="price"
                   placeholder="Price"
                   defaultValue={this.state.car.price}
+                  onChange={this.separateNumber}
                 />
               </div>
               <div className="  md-form">

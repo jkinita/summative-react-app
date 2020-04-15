@@ -3,6 +3,7 @@ import Axios from "axios";
 import * as UTILS from "../utils";
 import { Button } from "reactstrap";
 import { navigate } from "@reach/router";
+import { IoIosArrowBack } from "react-icons/io";
 // import EditButton from "./EditButton";
 import picture_women from "../images/women.png";
 import "bootstrap/dist/css/bootstrap.css";
@@ -13,7 +14,7 @@ import { FiPhone } from "react-icons/fi";
 import { FiMail } from "react-icons/fi";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
 import { Link } from "@reach/router";
-import { IoIosArrowBack } from "react-icons/io";
+// import Comments from "../components_ella/Comments";
 
 export default class MyCarDetails extends Component {
   constructor(props) {
@@ -78,6 +79,11 @@ export default class MyCarDetails extends Component {
     navigate(`/my-profile`);
   };
 
+  //do we need it:
+  gotoAddCar = (e) => {
+    navigate(`/add-car`);
+  };
+
   render() {
     return (
       <div className="main-content-t">
@@ -100,25 +106,29 @@ export default class MyCarDetails extends Component {
               alt="my-car-image"
             />
           </div>
-          <div className="row-t car-titles-container-t">
-            <h1 className="make-big-title-t"> {this.state.car.make} </h1>
-            <h1 className="model-big-title-t"> {this.state.car.model} </h1>
 
-            <h1 className="price-big-title-t"> ${this.state.car.price}</h1>
+          <div className="new-t">
+            <div className="row-t car-titles-container-t">
+              <h1 className="make-big-title-t"> {this.state.car.make} </h1>
+              <h1 className="model-big-title-t"> {this.state.car.model} </h1>
+
+              <h1 className="price-big-title-t"> ${this.state.car.price}</h1>
+            </div>
+
+            <div className="row-t year-odometer-container-t">
+              <div className="year-conainer-t">
+                <span className="my-car-sign-red">Year </span> <br />
+                <span className="my-car-sign-white">{this.state.car.year}</span>
+              </div>
+              <div className="odometer-conainer-t">
+                <span className="my-car-sign-red">Odometer </span> <br />
+                <span className="my-car-sign-white">
+                  {this.state.car.odometer}km
+                </span>
+              </div>
+            </div>
           </div>
 
-          <div className="row-t year-odometer-container-t">
-            <div className="year-conainer-t">
-              <span className="my-car-sign-red">Year </span> <br />
-              <span className="my-car-sign-white">{this.state.car.year}</span>
-            </div>
-            <div className="odometer-conainer-t">
-              <span className="my-car-sign-red">Odometer </span> <br />
-              <span className="my-car-sign-white">
-                {this.state.car.odometer}km
-              </span>
-            </div>
-          </div>
           <div className="row-t user-details-container-horisontal-t">
             <div className="  user-small-image-wrapper-t">
               <img src={picture_women} alt="women-img" />
@@ -130,9 +140,19 @@ export default class MyCarDetails extends Component {
             </div>
             <div className="plane-icon-wrapper-t">
               <FiMail />
-              {/* <img src="" alt="plane" /> */}
             </div>
           </div>
+
+          {/* {this.state.car.map((car, i) => {
+            return (
+              <div key={Date.now()}>
+                <Comments comments={car.comments} />
+
+                
+              </div>
+              
+            );
+          })} */}
 
           <div className="row-t buttons-container-t">
             <Button
