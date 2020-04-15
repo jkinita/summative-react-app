@@ -3,6 +3,8 @@ import Axios from "axios";
 import * as UTILS from "../utils";
 import SingleCarAsCard from "../components_ella/SingleCarAsCard";
 import "../css_ella/home.css";
+import { Link } from "@reach/router";
+import { IoIosArrowBack } from "react-icons/io";
 
 export default class FilteredCars extends Component {
   constructor(props) {
@@ -31,6 +33,17 @@ export default class FilteredCars extends Component {
     // var sortLow = this.props.location.state.sortlow;
     return (
       <div className="main-content-t">
+        <div className="header-w-arrow">
+          <h1>
+            <Link to="/search-cars">
+              <IoIosArrowBack color="#d92546" />
+            </Link>
+          </h1>
+          <h1>Car Search</h1>
+          <h1 style={{ visibility: "hidden" }}>
+            <IoIosArrowBack />
+          </h1>
+        </div>
         {this.state.result === false ? <p>no cars returned</p> : null}
         {this.state.cars
           .filter((car) => car.make == make)

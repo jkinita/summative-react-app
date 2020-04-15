@@ -12,7 +12,7 @@ import Home from "./components_ella/Home";
 import ViewCarDetails from "./components_ella/ViewCarDetails";
 import Header from "./components_ella/Header";
 import FooterNav from "./components_ella/FooterNav";
-import SplashPage from "./components_joe/SplashPage";
+import SplashPage from "./components_ella/SplashPage";
 
 // Tanya's components:
 

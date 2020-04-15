@@ -12,6 +12,8 @@ import "../css_tanya/car_details.css";
 import { FiPhone } from "react-icons/fi";
 import { FiMail } from "react-icons/fi";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
+import { Link } from "@reach/router";
+import { IoIosArrowBack } from "react-icons/io";
 
 export default class MyCarDetails extends Component {
   constructor(props) {
@@ -80,6 +82,17 @@ export default class MyCarDetails extends Component {
     return (
       <div className="main-content-t">
         <div className="my-car-details-container-t">
+          <div className="header-w-arrow">
+            <h1>
+              <Link to="/add-car">
+                <IoIosArrowBack color="#d92546" />
+              </Link>
+            </h1>
+            <h1>Sell Your Car</h1>
+            <h1 style={{ visibility: "hidden" }}>
+              <IoIosArrowBack />
+            </h1>
+          </div>
           <div className=" row-t my-car-image-wrapper-t">
             <img
               // width={100}

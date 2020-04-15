@@ -29,16 +29,19 @@ export default class SingleCarAsCard extends Component {
           <hr />
           <div className="odometer-year-container-e">
             <p>
-              Odometer <br /> <span>{this.props.odometer}km</span>
+              Odometer <br />{" "}
+              <span className="gray-text-e">{this.props.odometer}km</span>
             </p>
             <p>
-              Year <br /> <span>{this.props.year}</span>
+              Year <br /> <span className="gray-text-e">{this.props.year}</span>
             </p>
           </div>
-          <p>${this.props.price}</p>
-          <button onClick={this.viewCarDetails} className="view-details-btn">
-            View details
-          </button>
+          <div className="price-btn">
+            <p>${this.props.price}</p>
+            <button onClick={this.viewCarDetails} className="view-details-btn">
+              View details
+            </button>
+          </div>
         </div>
       </div>
     );

@@ -17,9 +17,13 @@ body #root {
   font-family: "Open Sans", sans-serif;
 }
 
+body p {
+  margin: 0;
+}
+
 .header {
   text-align: center;
-  padding: 2rem 0;
+  padding: 2.8rem 0;
 }
 
 .header-w-arrow {
@@ -28,11 +32,11 @@ body #root {
   align-items: center;
   width: 85%;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2.3rem 0;
 }
 
-.header-w-arrow h1:first-child {
-  color: #d92546;
+.header-w-arrow h1:first-child,
+.header-w-arrow h1:nth-child(3) {
   font-size: 3rem;
 }
 
@@ -50,8 +54,8 @@ body h2 {
 }
 
 body h3 {
-  font-size: 1.3rem;
-  color: #464b59;
+  font-size: 1.4rem;
+  color: #3f4249;
 }
 
 .my-car-sign-red,
@@ -117,11 +121,12 @@ button {
 }
 
 .view-details-btn {
-  width: 6.1rem;
+  width: 8rem;
   border-radius: 0.5rem;
-  font-size: 0.7rem;
+  font-size: 0.5rem;
   background-color: #d92546;
   padding: 0.6rem;
+  margin-left: 2rem;
 }
 
 /* --------------------INPUT STYLE-------------------- */

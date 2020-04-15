@@ -8,23 +8,14 @@ export default class Comments extends Component {
   }
   render() {
     return (
-      <div>
-        <p className="my-car-sign-red">
+      <div className="showing-comment-container-e">
+        <p style={{ marginTop: "2rem" }} className="my-car-sign-red">
           Comments: {this.props.comments.length}
         </p>
         <div>
           {this.props.comments.map((item, i) => {
             return (
-              <div
-                key={i}
-                style={{
-                  backgroundColor: "grey",
-                  borderBottomWidth: "4px",
-                  borderBottom: "2px solid crimson",
-                  padding: "5px",
-                  margin: "20px",
-                }}
-              >
+              <div className="showing-comment-e" key={i}>
                 <p>{item.comment}</p>
                 <p>model: {item.car_name}</p>
               </div>

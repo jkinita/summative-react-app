@@ -32,15 +32,17 @@ export default class SingleCar extends Component {
     }
 
     return (
-      <div className="view-cardetails-container-e">
-        <img src={carImage} alt="carimage" />
+      <div>
+        <div className="car-img-container-e">
+          <img src={carImage} alt="carimage" />
+        </div>
 
-        <div>
+        <div className="deatils-text-container-e">
           <div className="view-cardetails-text-e">
             <h1>
               {this.props.make} {this.props.model}
             </h1>
-            <h1>${this.props.price}</h1>
+            <h1 style={{ marginLeft: "2rem" }}>${this.props.price}</h1>
           </div>
 
           <div>
@@ -49,7 +51,7 @@ export default class SingleCar extends Component {
               <form action="" ref={this.formRef}>
                 <textarea
                   name="comment"
-                  cols="35"
+                  cols="34"
                   rows="3"
                   placeholder="Your Comment"
                 ></textarea>

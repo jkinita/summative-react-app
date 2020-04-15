@@ -70,6 +70,7 @@ export default class SearchCars extends Component {
   render() {
     return (
       <div className="main-content-t">
+        <h1 className="header">Car Search</h1>
         <div className="card form-container-t">
           <div className="card-body   pt-0">
             <form onSubmit={this.gotoFilterdCars}>

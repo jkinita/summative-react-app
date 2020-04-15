@@ -5,6 +5,7 @@ import Axios from "axios";
 import SingleCar from "./SingleCar";
 import Comments from "./Comments";
 import { IoIosArrowBack } from "react-icons/io";
+import { Link } from "@reach/router";
 // import BottomSingleCar from "./BottomSingleCar";
 
 export default class ViewCarDetails extends Component {
@@ -35,10 +36,12 @@ export default class ViewCarDetails extends Component {
 
   render() {
     return (
-      <div>
+      <div className="viewdeatils-container-e">
         <div className="header-w-arrow">
           <h1>
-            <IoIosArrowBack />
+            <Link to="/all-cars">
+              <IoIosArrowBack color="#d92546" />
+            </Link>
           </h1>
           <h1>View Details</h1>
           <h1 style={{ visibility: "hidden" }}>
@@ -59,8 +62,6 @@ export default class ViewCarDetails extends Component {
               />
 
               <Comments comments={car.comments} />
-
-              {/* <BottomSingleCar seller={car.seller_name} /> */}
             </div>
           );
         })}
