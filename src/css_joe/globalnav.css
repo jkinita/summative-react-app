@@ -1,4 +1,4 @@
-.sticky-list-e {
+.nav-options {
   display: flex;
   background-color: #f8f8f8;
   align-items: center;
@@ -8,7 +8,7 @@
   margin: 0;
 }
 
-.sticky-list-e li * {
+.nav-options li * {
   flex-direction: column;
   display: flex;
   align-items: center;
@@ -16,11 +16,12 @@
   font-size: 0.9rem;
 }
 
-.sticky-list-e li span {
+.nav-options li span {
   margin-top: 0.3rem;
 }
 
-.sticky-container-e {
-  position: sticky;
+.fixed-container {
+  position: fixed;
+  width: 100%;
   bottom: 0;
 }

@@ -9,10 +9,13 @@ import "./css/shared.css";
 
 // Ella's components:
 import Home from "./components_ella/Home";
-import ViewCarDetails from "./components_ella/ViewCarDetails";
+import ViewCarDetails from "./components_joe/ViewCarDetails";
 import Header from "./components_ella/Header";
-import FooterNav from "./components_ella/FooterNav";
+
+
+//Joseph's Components:
 import SplashPage from "./components_joe/SplashPage";
+import FooterNav from "./components_joe/FooterNav";
 
 // Tanya's components:
 
@@ -30,7 +33,7 @@ export default class App extends React.Component {
     return (
       <React.Fragment>
         <Router>
-          <SplashPage path="/" />
+          <SplashPage path="/splash" />
           <LoginPage path="/login" />
           <Home path="/all-cars" />
           <SearchCars path="/search-cars" />

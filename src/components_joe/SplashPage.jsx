@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 
-export default class SplashPage extends Component {
+export default class SplashScreen extends Component {
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <h1>Splash screen</h1>
+         
+      </div>
+    );
   }
 }
+

@@ -6,15 +6,15 @@ import {
   AiOutlineCar,
   AiOutlineUser,
 } from "react-icons/ai";
-import "../css_ella/globalnav.css";
+import "../css_joe/globalnav.css";
 
 export default class GlobalNav extends Component {
   componentDidMount() {}
 
   render() {
     return (
-      <nav className="sticky-container-e">
-        <ul className="sticky-list-e">
+      <nav className="fixed-container">
+        <ul className="nav-options">
           <li>
             <Link to="/all-cars">
               <AiOutlineHome size={33} />

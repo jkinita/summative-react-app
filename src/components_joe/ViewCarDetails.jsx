@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "../css/shared.css";
 import * as UTILS from "../utils";
 import Axios from "axios";
-import SingleCar from "./SingleCar";
-import Comments from "./Comments";
+import SingleCar from "../components_ella/SingleCar";
+import Comments from "../components_ella/Comments";
 import { IoIosArrowBack } from "react-icons/io";
 // import BottomSingleCar from "./BottomSingleCar";
 
