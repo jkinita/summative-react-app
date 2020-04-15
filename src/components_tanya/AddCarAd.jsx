@@ -3,6 +3,7 @@ import { Button } from "reactstrap";
 import Axios from "axios";
 import * as UTILS from "../utils";
 import { navigate } from "@reach/router";
+import { IoIosArrowBack } from "react-icons/io";
 import "../css/shared.css";
 import "../css_tanya/style.css";
 import "../css_tanya/addcar_form.css";
@@ -58,21 +59,45 @@ export default class AddCarAd extends Component {
       });
   };
 
-  uploadToExpress = (e) => {
-    e.preventDefault();
-    // grab reference to the form data
-    var formData = new FormData(this.formRef.current);
-    var settings = { headers: { "Content-Type": "multipart/form-data" } };
-    console.log(">>>+ FORMDATA ", formData);
-    Axios.post(UTILS.add_car, formData, settings).then((res) => {
-      console.log(res);
-    });
+  // uploadToExpress = (e) => {
+  //   e.preventDefault();
+  //   // grab reference to the form data
+  //   var formData = new FormData(this.formRef.current);
+  //   var settings = { headers: { "Content-Type": "multipart/form-data" } };
+  //   console.log(">>>+ FORMDATA ", formData);
+  //   Axios.post(UTILS.add_car, formData, settings).then((res) => {
+  //     console.log(res);
+  //   });
+  // };
+
+  separateNumber = () => {
+    var numberToCovert = document.querySelector(".odometer-input-t");
+    var val = numberToCovert.value.replace(/,/g, "");
+
+    var output = val.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    numberToCovert.value = output;
   };
+  // separateNumber = () => {
+  //   var numberToCovert = document.querySelector(".price-input-t");
+  //   var val = numberToCovert.value.replace(/,/g, "");
+  //   var output = val.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  //   numberToCovert.value = output;
+  // };
+
   render() {
     return (
       <div className="main-content-t">
         <h1 className="header">Sell Your Car</h1>
 
+        <div className="header-w-arrow">
+          <h1>
+            <IoIosArrowBack />
+          </h1>
+          <h1>Sell your car</h1>
+          <h1 style={{ visibility: "hidden" }}>
+            <IoIosArrowBack />
+          </h1>
+        </div>
         <h2 className="vehicle-details-title">Vehicle details</h2>
         {/* <h2 className="vehicle-details ">Vehicle Details</h2> */}
         <div className="card form-container-t">
@@ -119,19 +144,22 @@ export default class AddCarAd extends Component {
               <div className="main-redline-input md-form">
                 {/* <label>Odometer</label> */}
                 <input
+                  className="odometer-input-t"
                   id="odometer"
-                  type="number"
                   name="odometer"
                   placeholder="Odometer"
+                  onChange={this.separateNumber}
                 />
               </div>
               <div className=" main-redline-input md-form">
                 {/* <label>Price</label> */}
                 <input
+                  className="price-input-t"
                   id="price"
-                  type="number"
+                  // type="number"
                   name="price"
                   placeholder="Price"
+                  onChange={this.separateNumber}
                 />
               </div>
               <div className="  md-form">
@@ -148,11 +176,8 @@ export default class AddCarAd extends Component {
                   type="file"
                   name="car_image"
                   id="car_image"
-                  onChange={this.uploadToExpress}
+                  // onChange={this.uploadToExpress}
                 />
-                {/* <button onClick={this.uploadToExpress} className="add-button">
-                  Upload picture
-                </button> */}
               </div>
               <Button className=" red-btn-t  btn-next-t" type="submit">
                 Next
