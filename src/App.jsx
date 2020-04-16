@@ -9,13 +9,13 @@ import "./css/shared.css";
 
 // Ella's components:
 import Home from "./components_ella/Home";
-import ViewCarDetails from "./components_joe/ViewCarDetails";
 import Header from "./components_ella/Header";
 
 
 //Joseph's Components:
 import SplashPage from "./components_joe/SplashPage";
 import FooterNav from "./components_joe/FooterNav";
+import ViewCarDetails from "./components_joe/ViewCarDetails";
 
 // Tanya's components:
 

@@ -1,23 +1,9 @@
-.view-cardetails-container-e img {
-  width: 25rem;
+/* Joe's code -------------------> */
+
+.text-red {
+    color: #D92546;
 }
 
-.view-cardetails-container-e {
-  /* margin: 2rem; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.view-cardetails-container-e > div {
-  width: 100%;
-}
-
-.submit-btn-e {
-  background-color: #d92546;
-}
-
-.comment-container-e {
-  display: flex;
-  align-items: center;
+.text-white {
+    color: white;
 }

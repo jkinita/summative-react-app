@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import "../css/shared.css";
 import * as UTILS from "../utils";
 import Axios from "axios";
-import SingleCar from "../components_ella/SingleCar";
-import Comments from "../components_ella/Comments";
+import SingleCar from "../components_joe/SingleCar";
+import Comments from "../components_joe/Comments";
 import { IoIosArrowBack } from "react-icons/io";
-// import BottomSingleCar from "./BottomSingleCar";
 
 export default class ViewCarDetails extends Component {
   constructor(props) {
@@ -33,18 +32,10 @@ export default class ViewCarDetails extends Component {
     );
   };
 
+  //Joseph's code ------------------->
   render() {
     return (
       <div>
-        <div className="header-w-arrow">
-          <h1>
-            <IoIosArrowBack />
-          </h1>
-          <h1>View Details</h1>
-          <h1 style={{ visibility: "hidden" }}>
-            <IoIosArrowBack />
-          </h1>
-        </div>
         {this.state.cars.map((car, i) => {
           return (
             <div key={Date.now()}>
@@ -60,7 +51,6 @@ export default class ViewCarDetails extends Component {
 
               <Comments comments={car.comments} />
 
-              {/* <BottomSingleCar seller={car.seller_name} /> */}
             </div>
           );
         })}
